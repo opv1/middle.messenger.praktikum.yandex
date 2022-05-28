@@ -17,6 +17,8 @@ npm run build
 
 ## PR
 
+https://github.com/opv1/middle.messenger.praktikum.yandex/pull/1
+
 ## Figma
 
 https://www.figma.com/file/jF5fFFzgGOxQeB4CmKWTiE/
