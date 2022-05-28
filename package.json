@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "messenger",
   "scripts": {
-    "dev": "parcel src/index.pug --no-cache --open && parcel watch ./*",
-    "build": "parcel build src/index.pug --no-cache --public-url ./",
+    "dev": "parcel src/index.pug --open && parcel watch ./*",
+    "build": "parcel build src/index.pug",
     "start": "node index.js"
   },
   "repository": {
