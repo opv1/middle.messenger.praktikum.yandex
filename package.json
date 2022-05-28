@@ -2,10 +2,10 @@
   "name": "messenger",
   "version": "1.0.0",
   "description": "messenger",
-  "main": "index.js",
   "scripts": {
-    "start": "parcel src/index.pug --open",
-    "build": "parcel build src/index.pug --no-minify --public-url ./"
+    "dev": "parcel src/index.pug --no-cache --open && parcel watch ./*",
+    "build": "parcel build src/index.pug --no-cache --public-url ./",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -18,12 +18,15 @@
   },
   "homepage": "https://github.com/opv1/middle.messenger.praktikum.yandex#readme",
   "dependencies": {
-    "express": "^4.18.1",
     "pug": "^3.0.2",
     "sass": "^1.52.1"
   },
   "devDependencies": {
+    "@parcel/transformer-pug": "^2.6.0",
+    "@parcel/transformer-sass": "^2.6.0",
     "cssnano": "^5.1.9",
+    "express": "^4.18.1",
+    "parcel": "^2.6.0",
     "postcss": "^8.2.15"
   }
 }

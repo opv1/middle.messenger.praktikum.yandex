@@ -70,7 +70,7 @@ body {
     width: 100%;
     margin-top: 40px;
 
-    button {
+    .button {
       &:not(:last-child) {
         margin-bottom: 14px;
       }
@@ -214,6 +214,8 @@ body {
   &__block {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 100%;
 
     &:not(:last-child) {
       margin-bottom: 60px;
@@ -270,7 +272,7 @@ body {
     padding: 0;
     border: none;
     background-color: transparent;
-    background-image: url('assets/back.png');
+    background-image: url('../assets/back.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -475,7 +477,7 @@ body {
       padding: 0;
       border: none;
       background-color: transparent;
-      background-image: url('assets/setup.png');
+      background-image: url('../assets/setup.png');
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -538,7 +540,7 @@ body {
   &__attachment {
     width: 32px;
     height: 32px;
-    background-image: url('assets/attachment.png');
+    background-image: url('../assets/attachment.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -582,7 +584,7 @@ body {
     padding: 0;
     border: none;
     background-color: transparent;
-    background-image: url('assets/back.png');
+    background-image: url('../assets/back.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

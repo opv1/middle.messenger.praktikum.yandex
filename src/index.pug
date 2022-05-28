@@ -1,16 +1,4 @@
-- var title = 'Messenger'
+extends /base/main-index.pug
 
-doctype html
-html(lang='ru')
-  head 
-    title= title
-    link(rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css")
-    style 
-      include styles/styles.min.css
-
-body 
-  main.main
-    include pages/login/login
-
-script(src='./script.js' type='module')
-
+block content
+  include /pages/login
