@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "parcel src/index.pug --open && parcel watch ./*",
     "build": "parcel build src/index.pug",
-    "start": "parcel build src/index.pug && node index.js"
+    "start": "npm run build && node index.js"
   },
   "repository": {
     "type": "git",
@@ -28,7 +28,9 @@
     "express": "~4.18.1",
     "parcel": "~2.6.0",
     "parcel-plugin-clean-easy": "~1.0.2",
-    "postcss": "~8.2.15"
+    "postcss": "~8.2.15",
+    "ts-node": "~10.8.0",
+    "typescript": "~4.7.2"
   },
   "parcelCleanPaths": [
     "dist",
