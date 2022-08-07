@@ -1,0 +1,17 @@
+mixin chatItem(item)
+  button(type='button', name='chat')
+    a(
+      class=item.active ? 'chat__item chat__item_active' : 'chat__item',
+      href='/chat-active/chat-active.html'
+    )
+      .chat__item-img
+      .chat__item-main
+        span.chat__item-title= item.title
+        p.chat__item-preview= item.preview
+      .chat__item-info
+        .chat__item-date= item.date
+        if item.count
+          .chat__item-counter
+            span= item.count
+
+//- class=item.active ? 'chat__item chat__item_active' : 'chat__item',

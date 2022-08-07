@@ -1,0 +1,6 @@
+include ../chat-item/chat-item.pug
+
+.chat__list
+  if items
+    each item in items
+      +chatItem(item)

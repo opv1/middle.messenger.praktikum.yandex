@@ -1,0 +1,8 @@
+mixin message(item)
+  .chat__message(
+    class=item.type === 'inbox' ? 'chat__message--inbox' : 'chat__message--outbox'
+  )= item.value
+    span.chat__message__info
+      if item.sended
+        span.chat__message__sended
+      span.chat__message__date= item.date
