@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "messenger",
   "scripts": {
-    "dev": "parcel ./src/pages/**/*.html && parcel watch ./*",
-    "build": "parcel build ./src/pages/*.html ./src/pages/**/*.html --no-scope-hoist --no-source-maps --no-cache",
-    "start": "npm run build && node ./index.js",
+    "dev": "parcel ./src/pages/**/*.html && parcel watch ./src/pages/**/*",
+    "build": "parcel build ./src/pages/**/*.html",
+    "start": "npm run build && node index.js",
     "lint": "eslint ./src/**/*.ts --fix && npx stylelint ./src/**/*.scss --fix",
     "reinstall-modules": "rm -rf ./node_modules && rm -f package-lock.json && npm cache clean --force && npm i"
   },
