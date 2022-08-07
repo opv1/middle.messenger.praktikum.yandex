@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "messenger",
   "scripts": {
-    "dev": "parcel ./src/pages/**/*.html --port 3000 && parcel watch ./*",
+    "dev": "parcel ./src/pages/**/*.html && parcel watch ./*",
     "build": "parcel build ./src/pages/*.html ./src/pages/**/*.html --no-scope-hoist --no-source-maps --no-cache",
     "start": "npm run build && node ./index.js",
     "lint": "eslint ./src/**/*.ts --fix && npx stylelint ./src/**/*.scss --fix",
