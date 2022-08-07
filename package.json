@@ -36,7 +36,6 @@
     "express": "4.17.3",
     "nanoid": "3.3.1",
     "parcel": "2.3.2",
-    "parcel-packager-svg-sprite": "2.0.0",
     "parcel-plugin-clean-easy": "1.0.2",
     "parcel-transformer-pug-precompile": "1.0.6",
     "postcss": "8.4.14",

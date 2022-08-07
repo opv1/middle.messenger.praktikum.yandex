@@ -10,9 +10,5 @@
     "*.pug": [
       "parcel-transformer-pug-precompile"
     ]
-  },
-  "packagers": {
-    "*.html": "parcel-packager-svg-sprite",
-    "*.ts": "parcel-packager-svg-sprite"
   }
 }
