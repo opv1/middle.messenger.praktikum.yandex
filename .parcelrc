@@ -9,9 +9,6 @@
   "transformers": {
     "*.pug": [
       "parcel-transformer-pug-precompile"
-    ],
-    "*.svg": [
-      "parcel-transformer-svg-sprite"
     ]
   },
   "packagers": {
