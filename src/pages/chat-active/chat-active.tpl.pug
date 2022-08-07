@@ -1,0 +1,12 @@
+extends ../../layouts/chat/chat
+
+block mixins
+
+block sidebar
+  | !{ chatHead }
+  | !{ chatList }
+
+block content
+  | !{ chatHeader }
+  | !{ messageView }
+  | !{ chatFooter }

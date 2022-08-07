@@ -1,0 +1,17 @@
+include ../profile-item/profile-item
+
+.profile__container
+  .profile__header
+    .profile__avatar
+    span.profile__title= 'Иван'
+  .profile__main
+    if data
+      each item in data
+        +profileItem(item.name, item.value)
+  .profile__footer
+    +profileItem
+      | !{ changeInfoLink }
+    +profileItem
+      | !{ changePasswordLink }
+    +profileItem
+      | !{ exitLink }

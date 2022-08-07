@@ -1,0 +1,13 @@
+include ../chat-message/chat-message.pug
+
+.chat__view
+  if data
+    each item in data
+      if item.type === 'date'
+        .chat__view__date= item.value
+      else if item.type === 'inbox'
+        .chat__view__inbox
+          +message(item)
+      else
+        .chat__view__outbox
+          +message(item)

@@ -1,0 +1,8 @@
+mixin profileItem(name, value)
+  .profile__item
+    if name
+      span.profile__name= name
+    if value
+      span.profile__value= value
+    if block
+      block
