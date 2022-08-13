@@ -1,7 +1,7 @@
+import template from './404.tpl.pug';
+
 import Block from '@utils/Block';
 import renderDOM from '@utils/renderDOM';
-
-import template from './404.tpl.pug';
 
 class ErrorPage extends Block {
   constructor() {

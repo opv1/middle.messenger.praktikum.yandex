@@ -1,10 +1,8 @@
-import { IProfileItem } from '@types';
-
-import Block from '@utils/Block';
-
-import Link from '@ui/link/link';
-
 import template from './profile-container.tpl.pug';
+
+import { IProfileItem } from '@types';
+import Link from '@ui/link/link';
+import Block from '@utils/Block';
 
 interface IProfile {
   data: IProfileItem[];

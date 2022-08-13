@@ -1,6 +1,3 @@
-import Block from '@utils/Block';
-import renderDOM from '@utils/renderDOM';
-
 import template from './chat-active.tpl.pug';
 
 import ChatFooter from '@components/chat/chat-footer/chat-footer';
@@ -9,6 +6,8 @@ import ChatHeader from '@components/chat/chat-header/chat-header';
 import ChatList from '@components/chat/chat-list/chat-list';
 import MessageView from '@components/chat/chat-view/chat-view';
 import { data, messages } from '@constants';
+import Block from '@utils/Block';
+import renderDOM from '@utils/renderDOM';
 
 class ChatPage extends Block {
   constructor() {

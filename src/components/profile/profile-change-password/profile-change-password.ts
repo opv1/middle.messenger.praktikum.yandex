@@ -1,13 +1,10 @@
-import { TEvents } from '@types';
-
-import Block from '@utils/Block';
-
-import Button from '@ui/button/button';
-
 import template from './profile-change-password.tpl.pug';
 
 import FormField from '@components/auth/auth-field/auth-field';
 import { REGEXP_PASSWORD } from '@constants';
+import { TEvents } from '@types';
+import Button from '@ui/button/button';
+import Block from '@utils/Block';
 
 interface IProfileChangePassword {
   events?: TEvents;

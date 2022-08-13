@@ -1,15 +1,12 @@
-import { TEvents } from '@types';
-
-import Block from '@utils/Block';
-
-import Button from '@ui/button/button';
-import Icon from '@ui/icon/icon';
-import Input from '@ui/input/input';
-
 import template from './chat-form.tpl.pug';
 
 import arrowLeft from '@assets/arrow-left.svg';
 import { REGEXP_MESSAGE } from '@constants';
+import { TEvents } from '@types';
+import Button from '@ui/button/button';
+import Icon from '@ui/icon/icon';
+import Input from '@ui/input/input';
+import Block from '@utils/Block';
 
 interface IMessageForm {
   events?: TEvents;

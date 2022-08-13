@@ -1,8 +1,7 @@
-import { TEvents } from '@types';
-
-import Block from '@utils/Block';
-
 import template from './input.tpl.pug';
+
+import { TEvents } from '@types';
+import Block from '@utils/Block';
 
 export interface IInput {
   classes?: string;

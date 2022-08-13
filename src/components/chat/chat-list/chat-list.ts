@@ -1,8 +1,7 @@
-import { IChatItem } from '@types';
-
-import Block from '@utils/Block';
-
 import template from './chat-list.tpl.pug';
+
+import { IChatItem } from '@types';
+import Block from '@utils/Block';
 
 interface IChatList {
   items: IChatItem[];

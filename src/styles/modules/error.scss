@@ -4,27 +4,27 @@
   align-items: center;
 
   &__title {
-    font-style: normal;
+    margin-bottom: 20px;
     font-weight: 500;
+    font-style: normal;
     font-size: 40px;
     line-height: 40px;
     color: $black;
-    margin-bottom: 20px;
   }
 
   &__description {
-    font-style: normal;
+    margin-bottom: 70px;
     font-weight: 500;
+    font-style: normal;
     font-size: 20px;
     line-height: 20px;
     text-align: center;
     color: $black;
-    margin-bottom: 70px;
   }
 
   &__link {
-    font-style: normal;
     font-weight: 500;
+    font-style: normal;
     font-size: 11px;
     line-height: 11px;
     color: $blue;

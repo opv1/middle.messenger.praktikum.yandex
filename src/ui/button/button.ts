@@ -1,6 +1,6 @@
-import Block from '@utils/Block';
-
 import template from './button.tpl.pug';
+
+import Block from '@utils/Block';
 
 interface IButton {
   classes?: string;

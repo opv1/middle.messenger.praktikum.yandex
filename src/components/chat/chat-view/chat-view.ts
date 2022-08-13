@@ -1,8 +1,7 @@
-import { IMessageItem } from '@types';
-
-import Block from '@utils/Block';
-
 import template from './chat-view.tpl.pug';
+
+import { IMessageItem } from '@types';
+import Block from '@utils/Block';
 
 interface IMessageView {
   data: IMessageItem[];

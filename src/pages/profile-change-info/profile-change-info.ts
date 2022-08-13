@@ -1,13 +1,11 @@
-import Block from '@utils/Block';
-import renderDOM from '@utils/renderDOM';
-
-import Icon from '@ui/icon/icon';
-
 import template from './profile-change-info.tpl.pug';
 
 import arrowLeft from '@assets/arrow-left.svg';
 import ProfileChangeInfo from '@components/profile/profile-change-info/profile-change-info';
 import { getDataObject } from '@helpers';
+import Icon from '@ui/icon/icon';
+import Block from '@utils/Block';
+import renderDOM from '@utils/renderDOM';
 
 class ProfilePage extends Block {
   constructor() {
