@@ -18,7 +18,7 @@ class SignupForm extends Block {
   }
 
   protected initChildren(): void {
-    this.childrens.email = new FormField({
+    this.childrens.emailField = new FormField({
       inputProps: {
         type: 'email',
         name: 'email',
@@ -30,7 +30,7 @@ class SignupForm extends Block {
       validate: true,
     });
 
-    this.childrens.login = new FormField({
+    this.childrens.loginField = new FormField({
       inputProps: {
         type: 'text',
         name: 'login',
@@ -44,7 +44,7 @@ class SignupForm extends Block {
       validate: true,
     });
 
-    this.childrens.firstName = new FormField({
+    this.childrens.firstNameField = new FormField({
       inputProps: {
         type: 'text',
         name: 'first_name',
@@ -56,7 +56,7 @@ class SignupForm extends Block {
       validate: true,
     });
 
-    this.childrens.secondName = new FormField({
+    this.childrens.secondNameField = new FormField({
       inputProps: {
         type: 'text',
         name: 'second_name',
@@ -68,7 +68,7 @@ class SignupForm extends Block {
       validate: true,
     });
 
-    this.childrens.phone = new FormField({
+    this.childrens.phoneField = new FormField({
       inputProps: {
         type: 'tel',
         name: 'phone',
@@ -80,7 +80,7 @@ class SignupForm extends Block {
       validate: true,
     });
 
-    this.childrens.password = new FormField({
+    this.childrens.passwordField = new FormField({
       inputProps: {
         type: 'password',
         name: 'password',
@@ -94,7 +94,7 @@ class SignupForm extends Block {
       validate: true,
     });
 
-    this.childrens.passwordCheck = new FormField({
+    this.childrens.passwordCheckField = new FormField({
       inputProps: {
         type: 'password',
         name: 'passwordCheck',
@@ -108,13 +108,13 @@ class SignupForm extends Block {
       validate: true,
     });
 
-    this.childrens.button = new Button({
+    this.childrens.signupButton = new Button({
       type: 'submit',
       name: 'Зарегистрироваться',
       text: 'Зарегистрироваться',
     });
 
-    this.childrens.link = new Link({
+    this.childrens.signinLink = new Link({
       url: '/index.html',
       name: 'Войти',
     });

@@ -32,11 +32,10 @@
   }
 
   &__container {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     max-width: 510px;
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 13px;
   }
 
   &__header {
@@ -57,7 +56,6 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    margin: 0 auto 20px;
     border-radius: 50%;
     width: 130px;
     height: 130px;
@@ -65,6 +63,7 @@
   }
 
   &__title {
+    margin-top: 20px;
     font-weight: 600;
     font-style: normal;
     font-size: 16px;

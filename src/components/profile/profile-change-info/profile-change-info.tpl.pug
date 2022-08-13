@@ -5,16 +5,16 @@ form.profile__container
     .profile__avatar
   .profile__main
     +profileItem('Почта')
-      | !{ email }
+      | !{ emailField }
     +profileItem('Логин')
-      | !{ login }
+      | !{ loginField }
     +profileItem('Имя')
-      | !{ firstName }
+      | !{ firstNameField }
     +profileItem('Фамилия')
-      | !{ secondName }
+      | !{ secondNameField }
     +profileItem('Имя в чате')
-      | !{ displayName }
+      | !{ displayNameField }
     +profileItem('Телефон')
-      | !{ phone }
+      | !{ phoneField }
   .profile__footer
     | !{ saveButton }

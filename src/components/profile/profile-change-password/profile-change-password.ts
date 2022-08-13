@@ -16,7 +16,7 @@ class ProfileChangePassword extends Block {
   }
 
   protected initChildren() {
-    this.childrens.oldPassword = new FormField({
+    this.childrens.oldPasswordField = new FormField({
       inputProps: {
         type: 'password',
         name: 'password',
@@ -30,7 +30,7 @@ class ProfileChangePassword extends Block {
       validate: true,
     });
 
-    this.childrens.newPassword = new FormField({
+    this.childrens.newPasswordField = new FormField({
       inputProps: {
         type: 'password',
         name: 'newPassword',
@@ -44,7 +44,7 @@ class ProfileChangePassword extends Block {
       validate: true,
     });
 
-    this.childrens.newPasswordRepeat = new FormField({
+    this.childrens.repeatPasswordField = new FormField({
       inputProps: {
         type: 'password',
         name: 'newPassword',

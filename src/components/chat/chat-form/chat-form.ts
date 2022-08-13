@@ -18,7 +18,7 @@ class ChatForm extends Block {
   }
 
   protected initChildren(): void {
-    this.childrens.input = new Input({
+    this.childrens.messageInput = new Input({
       type: 'text',
       name: 'message',
       placeholder: 'Сообщение',
@@ -27,7 +27,7 @@ class ChatForm extends Block {
       pattern: REGEXP_MESSAGE,
     });
 
-    this.childrens.button = new Button({
+    this.childrens.sendButton = new Button({
       type: 'submit',
       name: 'send',
       classes: 'chat__form__send',

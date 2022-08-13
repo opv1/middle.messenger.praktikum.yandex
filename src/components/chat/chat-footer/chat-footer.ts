@@ -14,7 +14,7 @@ class ChatFooter extends Block {
       },
     });
 
-    this.childrens.icon = new Icon({
+    this.childrens.attachmentIcon = new Icon({
       src: attachmentIcon,
     });
   }

@@ -18,7 +18,7 @@ class SigninForm extends Block {
   }
 
   protected initChildren(): void {
-    this.childrens.login = new FormField({
+    this.childrens.loginField = new FormField({
       inputProps: {
         type: 'text',
         name: 'login',
@@ -32,7 +32,7 @@ class SigninForm extends Block {
       validate: true,
     });
 
-    this.childrens.password = new FormField({
+    this.childrens.passwordField = new FormField({
       inputProps: {
         type: 'password',
         name: 'password',
@@ -46,13 +46,13 @@ class SigninForm extends Block {
       validate: true,
     });
 
-    this.childrens.button = new Button({
+    this.childrens.loginButton = new Button({
       type: 'submit',
       name: 'Войти',
       text: 'Войти',
     });
 
-    this.childrens.link = new Link({
+    this.childrens.singupLink = new Link({
       url: '/signup/signup.html',
       name: 'Нет аккаунта?',
     });

@@ -24,7 +24,7 @@ class Profile extends Block {
       name: 'Изменить пароль',
     });
 
-    this.childrens.exitLink = new Link({
+    this.childrens.logoutLink = new Link({
       url: '/',
       name: 'Выйти',
     });

@@ -15,7 +15,7 @@ class ChatSearch extends Block {
   }
 
   protected initChildren() {
-    this.childrens.icon = new Icon({
+    this.childrens.searchIcon = new Icon({
       src: searchIcon,
     });
   }

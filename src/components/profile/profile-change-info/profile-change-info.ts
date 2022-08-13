@@ -16,7 +16,7 @@ class ProfileChangeInfo extends Block {
   }
 
   protected initChildren() {
-    this.childrens.email = new FormField({
+    this.childrens.emailField = new FormField({
       inputProps: {
         type: 'email',
         name: 'email',
@@ -28,7 +28,7 @@ class ProfileChangeInfo extends Block {
       validate: true,
     });
 
-    this.childrens.login = new FormField({
+    this.childrens.loginField = new FormField({
       inputProps: {
         type: 'text',
         name: 'login',
@@ -42,7 +42,7 @@ class ProfileChangeInfo extends Block {
       validate: true,
     });
 
-    this.childrens.firstName = new FormField({
+    this.childrens.firstNameField = new FormField({
       inputProps: {
         type: 'text',
         name: 'first_name',
@@ -54,7 +54,7 @@ class ProfileChangeInfo extends Block {
       validate: true,
     });
 
-    this.childrens.secondName = new FormField({
+    this.childrens.secondNameField = new FormField({
       inputProps: {
         type: 'text',
         name: 'second_name',
@@ -66,7 +66,7 @@ class ProfileChangeInfo extends Block {
       validate: true,
     });
 
-    this.childrens.displayName = new FormField({
+    this.childrens.displayNameField = new FormField({
       inputProps: {
         type: 'text',
         name: 'display_name',
@@ -78,7 +78,7 @@ class ProfileChangeInfo extends Block {
       validate: true,
     });
 
-    this.childrens.phone = new FormField({
+    this.childrens.phoneField = new FormField({
       inputProps: {
         type: 'tel',
         name: 'phone',
