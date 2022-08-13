@@ -1,6 +1,6 @@
 import template from './chat-form.tpl.pug';
 
-import arrowLeft from '@assets/arrow-left.svg';
+import arrowIcon from '@assets/arrow-left.svg';
 import Button from '@components/ui/button/button';
 import Icon from '@components/ui/icon/icon';
 import Input from '@components/ui/input/input';
@@ -12,7 +12,7 @@ interface IMessageForm {
   events?: EventsType;
 }
 
-class MessageForm extends Block {
+class ChatForm extends Block {
   constructor(props: IMessageForm) {
     super(props);
   }
@@ -32,7 +32,7 @@ class MessageForm extends Block {
       name: 'send',
       classes: 'chat__form__send',
       block: new Icon({
-        src: arrowLeft,
+        src: arrowIcon,
       }),
     });
   }
@@ -42,4 +42,4 @@ class MessageForm extends Block {
   }
 }
 
-export default MessageForm;
+export default ChatForm;

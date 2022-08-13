@@ -7,7 +7,7 @@ interface IMessageView {
   data: IMessageItem[];
 }
 
-class MessageView extends Block {
+class ChatView extends Block {
   constructor(props: IMessageView) {
     super(props);
   }
@@ -17,4 +17,4 @@ class MessageView extends Block {
   }
 }
 
-export default MessageView;
+export default ChatView;

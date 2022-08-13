@@ -1,21 +1,21 @@
 import template from './chat-footer.tpl.pug';
 
-import iconClip from '@assets/icon-attachment.svg';
-import MessageForm from '@components/chat/chat-form/chat-form';
+import attachmentIcon from '@assets/icon-attachment.svg';
+import ChatForm from '@components/chat/chat-form/chat-form';
 import Icon from '@components/ui/icon/icon';
 import { getDataObject } from '@helpers';
 import Block from '@utils/Block';
 
 class ChatFooter extends Block {
   protected initChildren() {
-    this.childrens.messageForm = new MessageForm({
+    this.childrens.chatForm = new ChatForm({
       events: {
         submit: (event) => this.submitHandler(event),
       },
     });
 
     this.childrens.icon = new Icon({
-      src: iconClip,
+      src: attachmentIcon,
     });
   }
 

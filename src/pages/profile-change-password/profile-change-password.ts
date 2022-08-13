@@ -1,6 +1,6 @@
 import template from './profile-change-password.tpl.pug';
 
-import arrowLeft from '@assets/arrow-left.svg';
+import arrowIcon from '@assets/arrow-left.svg';
 import ProfileChangePassword from '@components/profile/profile-change-password/profile-change-password';
 import Icon from '@components/ui/icon/icon';
 import { getDataObject } from '@helpers';
@@ -20,7 +20,7 @@ class ProfilePage extends Block {
     });
 
     this.childrens.icon = new Icon({
-      src: arrowLeft,
+      src: arrowIcon,
     });
   }
 

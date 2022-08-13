@@ -1,6 +1,6 @@
 import template from './chat-head.tpl.pug';
 
-import arrowRight from '@assets/arrow-right.svg';
+import arrowIcon from '@assets/arrow-right.svg';
 import ChatSearch from '@components/chat/chat-search/chat-search';
 import Icon from '@components/ui/icon/icon';
 import Link from '@components/ui/link/link';
@@ -20,7 +20,7 @@ class ChatHead extends Block {
       url: '/profile/profile.html',
       name: 'Профиль',
       block: new Icon({
-        src: arrowRight,
+        src: arrowIcon,
       }),
     });
   }

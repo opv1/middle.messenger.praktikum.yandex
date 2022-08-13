@@ -1,6 +1,6 @@
 import template from './chat-search.tpl.pug';
 
-import iconSearch from '@assets/icon-search.svg';
+import searchIcon from '@assets/icon-search.svg';
 import Icon from '@components/ui/icon/icon';
 import { EventsType } from '@types';
 import Block from '@utils/Block';
@@ -16,7 +16,7 @@ class ChatSearch extends Block {
 
   protected initChildren() {
     this.childrens.icon = new Icon({
-      src: iconSearch,
+      src: searchIcon,
     });
   }
 

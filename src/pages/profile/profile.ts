@@ -1,6 +1,6 @@
 import template from './profile.tpl.pug';
 
-import arrowLeft from '@assets/arrow-left.svg';
+import arrowIcon from '@assets/arrow-left.svg';
 import Profile from '@components/profile/profile-container/profile-container';
 import Icon from '@components/ui/icon/icon';
 import { profileInfo } from '@constants';
@@ -18,7 +18,7 @@ class ProfilePage extends Block {
     });
 
     this.childrens.icon = new Icon({
-      src: arrowLeft,
+      src: arrowIcon,
     });
   }
 
