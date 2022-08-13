@@ -1,13 +1,13 @@
 import template from './profile-change-password.tpl.pug';
 
 import FormField from '@components/auth/auth-field/auth-field';
-import { REGEXP_PASSWORD } from '@constants';
-import { TEvents } from '@types';
 import Button from '@components/ui/button/button';
+import { REGEXP_PASSWORD } from '@constants';
+import { EventsType } from '@types';
 import Block from '@utils/Block';
 
 interface IProfileChangePassword {
-  events?: TEvents;
+  events?: EventsType;
 }
 
 class ProfileChangePassword extends Block {

@@ -1,6 +1,6 @@
 import template from './input.tpl.pug';
 
-import { TEvents } from '@types';
+import { EventsType } from '@types';
 import Block from '@utils/Block';
 
 export interface IInput {
@@ -14,7 +14,7 @@ export interface IInput {
   maxlength?: number;
   pattern?: string;
   validate?: boolean;
-  events?: TEvents;
+  events?: EventsType;
 }
 
 class Input extends Block {

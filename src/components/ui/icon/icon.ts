@@ -3,9 +3,8 @@ import template from './icon.tpl.pug';
 import Block from '@utils/Block';
 
 interface IIcon {
-  id: string;
-  width: number;
-  height: number;
+  classes?: string;
+  src: string;
 }
 
 class Icon extends Block {

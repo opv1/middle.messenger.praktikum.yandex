@@ -1,4 +1,4 @@
-import { Method, Options, OptionsWithoutMethod } from '@types';
+import { Method, OptionsType, OptionsWithoutMethod } from '@types';
 
 class HTTPTransport {
   get(url: string, options: OptionsWithoutMethod = {}): Promise<XMLHttpRequest> {
@@ -21,7 +21,7 @@ class HTTPTransport {
     return this.request(url, { ...options, method: Method.PATCH });
   }
 
-  request(url: string, options: Options): Promise<XMLHttpRequest> {
+  request(url: string, options: OptionsType): Promise<XMLHttpRequest> {
     const { method, data } = options;
 
     return new Promise((resolve, reject) => {

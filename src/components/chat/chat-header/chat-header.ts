@@ -7,9 +7,7 @@ import Block from '@utils/Block';
 class ChatHeader extends Block {
   protected initChildren() {
     this.childrens.icon = new Icon({
-      id: iconSettings,
-      width: 3,
-      height: 16,
+      src: iconSettings,
     });
   }
 

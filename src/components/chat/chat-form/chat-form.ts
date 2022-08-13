@@ -1,15 +1,15 @@
 import template from './chat-form.tpl.pug';
 
 import arrowLeft from '@assets/arrow-left.svg';
-import { REGEXP_MESSAGE } from '@constants';
-import { TEvents } from '@types';
 import Button from '@components/ui/button/button';
 import Icon from '@components/ui/icon/icon';
 import Input from '@components/ui/input/input';
+import { REGEXP_MESSAGE } from '@constants';
+import { EventsType } from '@types';
 import Block from '@utils/Block';
 
 interface IMessageForm {
-  events?: TEvents;
+  events?: EventsType;
 }
 
 class MessageForm extends Block {
@@ -32,9 +32,7 @@ class MessageForm extends Block {
       name: 'send',
       classes: 'chat__form__send',
       block: new Icon({
-        id: arrowLeft,
-        width: 24,
-        height: 24,
+        src: arrowLeft,
       }),
     });
   }

@@ -1,15 +1,15 @@
 import template from './form-signup.tpl.pug';
 
 import FormField from '@components/auth/auth-field/auth-field';
-import { REGEXP_EMAIL, REGEXP_LOGIN, REGEXP_NAME, REGEXP_PASSWORD, REGEXP_PHONE } from '@constants';
-import { TEvents } from '@types';
 import Button from '@components/ui/button/button';
 import Link from '@components/ui/link/link';
+import { REGEXP_EMAIL, REGEXP_LOGIN, REGEXP_NAME, REGEXP_PASSWORD, REGEXP_PHONE } from '@constants';
+import { EventsType } from '@types';
 import Block from '@utils/Block';
 
 interface ISignupForm {
   method: string;
-  events?: TEvents;
+  events?: EventsType;
 }
 
 class SignupForm extends Block {

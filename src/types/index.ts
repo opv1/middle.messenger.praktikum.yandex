@@ -6,14 +6,20 @@ export enum Method {
   DELETE = 'DELETE',
 }
 
-export type Options = {
+export enum Message {
+  DATE = 'date',
+  INBOX = 'inbox',
+  OUTBOX = 'outbox',
+}
+
+export type OptionsType = {
   method: Method;
   data?: any;
 };
 
-export type OptionsWithoutMethod = Omit<Options, 'method'>;
+export type OptionsWithoutMethod = Omit<OptionsType, 'method'>;
 
-export type TEvents = Record<string, (e: Event) => void>;
+export type EventsType = Record<string, (e: Event) => void>;
 
 export interface IChatItem {
   title: string;
@@ -22,14 +28,8 @@ export interface IChatItem {
   count: string;
 }
 
-export enum MessageType {
-  DATE = 'date',
-  INBOX = 'inbox',
-  OUTBOX = 'outbox',
-}
-
 export interface IMessageItem {
-  type: MessageType;
+  type: Message;
   value: string;
   date?: string;
   sended?: boolean;

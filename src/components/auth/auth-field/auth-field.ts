@@ -1,5 +1,6 @@
 import template from './auth-field.tpl.pug';
 
+import Input, { IInput } from '@components/ui/input/input';
 import {
   addClass,
   getValidationMessage,
@@ -8,8 +9,7 @@ import {
   removeClass,
   setMessage,
 } from '@helpers';
-import { TEvents } from '@types';
-import Input, { IInput } from '@components/ui/input/input';
+import { EventsType } from '@types';
 import Block from '@utils/Block';
 
 interface IFormField {
@@ -18,7 +18,7 @@ interface IFormField {
   label?: string;
   validate?: boolean;
   classes?: string;
-  events?: TEvents;
+  events?: EventsType;
 }
 
 class FormField extends Block {

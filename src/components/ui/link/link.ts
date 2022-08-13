@@ -3,6 +3,7 @@ import template from './link.tpl.pug';
 import Block from '@utils/Block';
 
 interface ILink {
+  classes?: string;
   url: string;
   name?: string;
   block?: Block;

@@ -2,8 +2,8 @@ import template from './chat-footer.tpl.pug';
 
 import iconClip from '@assets/icon-attachment.svg';
 import MessageForm from '@components/chat/chat-form/chat-form';
-import { getDataObject } from '@helpers';
 import Icon from '@components/ui/icon/icon';
+import { getDataObject } from '@helpers';
 import Block from '@utils/Block';
 
 class ChatFooter extends Block {
@@ -15,9 +15,7 @@ class ChatFooter extends Block {
     });
 
     this.childrens.icon = new Icon({
-      id: iconClip,
-      width: 32,
-      height: 32,
+      src: iconClip,
     });
   }
 
