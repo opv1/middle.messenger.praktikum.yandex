@@ -1,7 +1,7 @@
 @import './colors';
-@import '../ui/button/button';
-@import '../ui/input/input';
-@import '../ui/link/link';
+@import './ui/button';
+@import './ui/input';
+@import './ui/link';
 @import './modules/auth';
 @import './modules/chat';
 @import './modules/error';
@@ -12,7 +12,7 @@
 }
 
 body {
-  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+  font-family: 'Inter', 'Arial', 'Helvetica', sans-serif;
   background-color: $white;
 }
 
