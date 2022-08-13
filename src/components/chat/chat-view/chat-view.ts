@@ -1,6 +1,6 @@
-import { IMessageItem } from '@/types';
+import { IMessageItem } from '@types';
 
-import Block from '@/utils/Block';
+import Block from '@utils/Block';
 
 import template from './chat-view.tpl.pug';
 

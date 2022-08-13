@@ -1,13 +1,13 @@
-import Block from '@/utils/Block';
-import renderDOM from '@/utils/renderDOM';
+import Block from '@utils/Block';
+import renderDOM from '@utils/renderDOM';
 
-import Icon from '@/ui/icon/icon';
+import Icon from '@ui/icon/icon';
 
 import template from './profile.tpl.pug';
 
-import arrowLeft from '@/assets/arrow-left.svg';
-import Profile from '@/components/profile/profile-container/profile-container';
-import { profileInfo } from '@/constants';
+import arrowLeft from '@assets/arrow-left.svg';
+import Profile from '@components/profile/profile-container/profile-container';
+import { profileInfo } from '@constants';
 
 class ProfilePage extends Block {
   constructor() {

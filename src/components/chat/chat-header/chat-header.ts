@@ -1,10 +1,10 @@
-import Block from '@/utils/Block';
+import Block from '@utils/Block';
 
-import Icon from '@/ui/icon/icon';
+import Icon from '@ui/icon/icon';
 
 import template from './chat-header.tpl.pug';
 
-import iconSettings from '@/assets/icon-settings.svg';
+import iconSettings from '@assets/icon-settings.svg';
 
 class ChatHeader extends Block {
   protected initChildren() {

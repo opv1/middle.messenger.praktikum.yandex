@@ -1,6 +1,6 @@
-import { TEvents } from '@/types';
+import { TEvents } from '@types';
 
-import Block from '@/utils/Block';
+import Block from '@utils/Block';
 
 import template from './input.tpl.pug';
 

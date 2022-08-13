@@ -1,15 +1,15 @@
-import { TEvents } from '@/types';
+import { TEvents } from '@types';
 
-import Block from '@/utils/Block';
+import Block from '@utils/Block';
 
-import Button from '@/ui/button/button';
-import Icon from '@/ui/icon/icon';
-import Input from '@/ui/input/input';
+import Button from '@ui/button/button';
+import Icon from '@ui/icon/icon';
+import Input from '@ui/input/input';
 
 import template from './chat-form.tpl.pug';
 
-import arrowLeft from '@/assets/arrow-left.svg';
-import { regexpMessage } from '@/constants';
+import arrowLeft from '@assets/arrow-left.svg';
+import { REGEXP_MESSAGE } from '@constants';
 
 interface IMessageForm {
   events?: TEvents;
@@ -27,7 +27,7 @@ class MessageForm extends Block {
       placeholder: 'Сообщение',
       classes: 'chat__form__text',
       required: true,
-      pattern: regexpMessage,
+      pattern: REGEXP_MESSAGE,
     });
 
     this.childrens.button = new Button({

@@ -1,8 +1,8 @@
-import { IProfileItem } from '@/types';
+import { IProfileItem } from '@types';
 
-import Block from '@/utils/Block';
+import Block from '@utils/Block';
 
-import Link from '@/ui/link/link';
+import Link from '@ui/link/link';
 
 import template from './profile-container.tpl.pug';
 

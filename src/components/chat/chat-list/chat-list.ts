@@ -1,6 +1,6 @@
-import { IChatItem } from '@/types';
+import { IChatItem } from '@types';
 
-import Block from '@/utils/Block';
+import Block from '@utils/Block';
 
 import template from './chat-list.tpl.pug';
 

@@ -58,8 +58,6 @@
       color: $black;
 
       &:focus {
-        outline: none;
-
         & + label {
           opacity: 0;
         }
@@ -342,10 +340,6 @@
       border-radius: 30px;
       color: $black;
       background: #efefef;
-
-      &:focus {
-        outline: none;
-      }
     }
 
     &__send {

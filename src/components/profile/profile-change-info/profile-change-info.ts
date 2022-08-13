@@ -1,13 +1,13 @@
-import { TEvents } from '@/types';
+import { TEvents } from '@types';
 
-import Block from '@/utils/Block';
+import Block from '@utils/Block';
 
-import Button from '@/ui/button/button';
+import Button from '@ui/button/button';
 
 import template from './profile-change-info.tpl.pug';
 
-import FormField from '@/components/auth/auth-field/auth-field';
-import { regexpEmail, regexpLogin, regexpName, regexpPhone } from '@/constants';
+import FormField from '@components/auth/auth-field/auth-field';
+import { REGEXP_EMAIL, REGEXP_LOGIN, REGEXP_NAME, REGEXP_PHONE } from '@constants';
 
 interface IProfileChangeInfo {
   events?: TEvents;
@@ -25,7 +25,7 @@ class ProfileChangeInfo extends Block {
         name: 'email',
         placeholder: 'pochta@yandex.ru',
         required: true,
-        pattern: regexpEmail,
+        pattern: REGEXP_EMAIL,
       },
       classes: 'profile__field',
       validate: true,
@@ -39,7 +39,7 @@ class ProfileChangeInfo extends Block {
         required: true,
         minlength: 3,
         maxlength: 20,
-        pattern: regexpLogin,
+        pattern: REGEXP_LOGIN,
       },
       classes: 'profile__field',
       validate: true,
@@ -51,7 +51,7 @@ class ProfileChangeInfo extends Block {
         name: 'first_name',
         placeholder: 'Иван',
         required: true,
-        pattern: regexpName,
+        pattern: REGEXP_NAME,
       },
       classes: 'profile__field',
       validate: true,
@@ -63,7 +63,7 @@ class ProfileChangeInfo extends Block {
         name: 'second_name',
         placeholder: 'Иванов',
         required: true,
-        pattern: regexpName,
+        pattern: REGEXP_NAME,
       },
       classes: 'profile__field',
       validate: true,
@@ -75,7 +75,7 @@ class ProfileChangeInfo extends Block {
         name: 'display_name',
         placeholder: 'Иван',
         required: true,
-        pattern: regexpName,
+        pattern: REGEXP_NAME,
       },
       classes: 'profile__field',
       validate: true,
@@ -87,7 +87,7 @@ class ProfileChangeInfo extends Block {
         name: 'phone',
         placeholder: '+7 (909) 967 30 30',
         required: true,
-        pattern: regexpPhone,
+        pattern: REGEXP_PHONE,
       },
       classes: 'profile__field',
       validate: true,

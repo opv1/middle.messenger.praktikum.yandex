@@ -1,10 +1,10 @@
-import Block from '@/utils/Block';
-import renderDOM from '@/utils/renderDOM';
+import Block from '@utils/Block';
+import renderDOM from '@utils/renderDOM';
 
 import template from './signup.tpl.pug';
 
-import SignupForm from '@/components/auth/auth-signup/form-signup';
-import { getDataObject } from '@/helpers';
+import SignupForm from '@components/auth/auth-signup/form-signup';
+import { getDataObject } from '@helpers';
 
 class SignupPage extends Block {
   constructor() {

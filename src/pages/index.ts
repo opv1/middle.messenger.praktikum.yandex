@@ -1,10 +1,10 @@
-import Block from '@/utils/Block';
-import renderDOM from '@/utils/renderDOM';
+import Block from '@utils/Block';
+import renderDOM from '@utils/renderDOM';
 
 import template from './index.tpl.pug';
 
-import SigninForm from '@/components/auth/auth-signin/auth-signin';
-import { getDataObject } from '@/helpers';
+import SigninForm from '@components/auth/auth-signin/auth-signin';
+import { getDataObject } from '@helpers';
 
 class IndexPage extends Block {
   constructor() {

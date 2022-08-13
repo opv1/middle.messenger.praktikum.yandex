@@ -1,18 +1,18 @@
-import { MessageType } from '@/types';
+import { MessageType } from '@types';
 
-export const regexpName = '^(?=.*[A-ZА-ЯЁ])([A-Za-zА-Яа-яЁё\\-]+)';
+export const REGEXP_NAME = '^(?=.*[A-ZА-ЯЁ])([A-Za-zА-Яа-яЁё\\-]+)';
 
-export const regexpLogin = '(?=.*[A-Za-z])[A-Za-z0-9\\-_]+';
+export const REGEXP_LOGIN = '(?=.*[A-Za-z])[A-Za-z0-9\\-_]+';
 
-export const regexpEmail =
+export const REGEXP_EMAIL =
   '^([\\w-]+(?:\\.[\\w-]+)*)@((?:[\\w-]+\\.)*\\w[\\w-]{0,66})\\.([a-z]{2,6}(?:\\.[a-z]{2})?)$';
 
-export const regexpPassword = '(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,40}';
+export const REGEXP_PASSWORD = '(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,40}';
 
-export const regexpPhone =
+export const REGEXP_PHONE =
   '([\\+]*[7-8]{1}\\s?[\\(]*9[0-9]{2}[\\)]*\\s?\\d{3}[-]*\\d{2}[-]*\\d{2})';
 
-export const regexpMessage = '.+';
+export const REGEXP_MESSAGE = '.+';
 
 export const data = [
   {

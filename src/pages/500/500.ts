@@ -1,5 +1,5 @@
-import Block from '@/utils/Block';
-import renderDOM from '@/utils/renderDOM';
+import Block from '@utils/Block';
+import renderDOM from '@utils/renderDOM';
 
 import template from './500.tpl.pug';
 

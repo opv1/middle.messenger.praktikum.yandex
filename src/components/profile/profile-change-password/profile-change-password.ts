@@ -1,13 +1,13 @@
-import { TEvents } from '@/types';
+import { TEvents } from '@types';
 
-import Block from '@/utils/Block';
+import Block from '@utils/Block';
 
-import Button from '@/ui/button/button';
+import Button from '@ui/button/button';
 
 import template from './profile-change-password.tpl.pug';
 
-import FormField from '@/components/auth/auth-field/auth-field';
-import { regexpPassword } from '@/constants';
+import FormField from '@components/auth/auth-field/auth-field';
+import { REGEXP_PASSWORD } from '@constants';
 
 interface IProfileChangePassword {
   events?: TEvents;
@@ -27,7 +27,7 @@ class ProfileChangePassword extends Block {
         required: true,
         minlength: 8,
         maxlength: 40,
-        pattern: regexpPassword,
+        pattern: REGEXP_PASSWORD,
       },
       classes: 'profile__field',
       validate: true,
@@ -41,7 +41,7 @@ class ProfileChangePassword extends Block {
         required: true,
         minlength: 8,
         maxlength: 40,
-        pattern: regexpPassword,
+        pattern: REGEXP_PASSWORD,
       },
       classes: 'profile__field',
       validate: true,
@@ -55,7 +55,7 @@ class ProfileChangePassword extends Block {
         required: true,
         minlength: 8,
         maxlength: 40,
-        pattern: regexpPassword,
+        pattern: REGEXP_PASSWORD,
       },
       classes: 'profile__field',
       validate: true,

@@ -1,14 +1,14 @@
-import { TEvents } from '@/types';
+import { TEvents } from '@types';
 
-import Block from '@/utils/Block';
+import Block from '@utils/Block';
 
-import Button from '@/ui/button/button';
-import Link from '@/ui/link/link';
+import Button from '@ui/button/button';
+import Link from '@ui/link/link';
 
 import template from './auth-signin.tpl.pug';
 
-import FormField from '@/components/auth/auth-field/auth-field';
-import { regexpLogin, regexpPassword } from '@/constants';
+import FormField from '@components/auth/auth-field/auth-field';
+import { REGEXP_LOGIN, REGEXP_PASSWORD } from '@constants';
 
 interface ISigninForm {
   method: string;
@@ -28,7 +28,7 @@ class SigninForm extends Block {
         required: true,
         minlength: 3,
         maxlength: 20,
-        pattern: regexpLogin,
+        pattern: REGEXP_LOGIN,
       },
       label: 'Логин',
       name: 'login',
@@ -42,7 +42,7 @@ class SigninForm extends Block {
         required: true,
         minlength: 8,
         maxlength: 40,
-        pattern: regexpPassword,
+        pattern: REGEXP_PASSWORD,
       },
       label: 'Пароль',
       name: 'password',

@@ -1,8 +1,8 @@
-import { TEvents } from '@/types';
+import { TEvents } from '@types';
 
-import Block from '@/utils/Block';
+import Block from '@utils/Block';
 
-import Input, { IInput } from '@/ui/input/input';
+import Input, { IInput } from '@ui/input/input';
 
 import template from './auth-field.tpl.pug';
 
@@ -13,7 +13,7 @@ import {
   isValid,
   removeClass,
   setMessage,
-} from '@/helpers';
+} from '@helpers';
 
 interface IFormField {
   inputProps: IInput;

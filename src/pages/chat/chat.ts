@@ -1,11 +1,11 @@
-import Block from '@/utils/Block';
-import renderDOM from '@/utils/renderDOM';
+import Block from '@utils/Block';
+import renderDOM from '@utils/renderDOM';
 
 import template from './chat.tpl.pug';
 
-import ChatHead from '@/components/chat/chat-head/chat-head';
-import ChatList from '@/components/chat/chat-list/chat-list';
-import { data } from '@/constants';
+import ChatHead from '@components/chat/chat-head/chat-head';
+import ChatList from '@components/chat/chat-list/chat-list';
+import { data } from '@constants';
 
 class ChatPage extends Block {
   constructor() {

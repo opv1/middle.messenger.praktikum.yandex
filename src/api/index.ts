@@ -1,4 +1,4 @@
-import { Method, Options, OptionsWithoutMethod } from '@/types';
+import { Method, Options, OptionsWithoutMethod } from '@types';
 
 class HTTPTransport {
   get(url: string, options: OptionsWithoutMethod = {}): Promise<XMLHttpRequest> {

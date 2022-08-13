@@ -1,14 +1,14 @@
-import { TEvents } from '@/types';
+import { TEvents } from '@types';
 
-import Block from '@/utils/Block';
+import Block from '@utils/Block';
 
-import Button from '@/ui/button/button';
-import Link from '@/ui/link/link';
+import Button from '@ui/button/button';
+import Link from '@ui/link/link';
 
 import template from './form-signup.tpl.pug';
 
-import FormField from '@/components/auth/auth-field/auth-field';
-import { regexpEmail, regexpLogin, regexpName, regexpPassword,regexpPhone } from '@/constants';
+import FormField from '@components/auth/auth-field/auth-field';
+import { REGEXP_EMAIL, REGEXP_LOGIN, REGEXP_NAME, REGEXP_PASSWORD, REGEXP_PHONE } from '@constants';
 
 interface ISignupForm {
   method: string;
@@ -26,7 +26,7 @@ class SignupForm extends Block {
         type: 'email',
         name: 'email',
         required: true,
-        pattern: regexpEmail,
+        pattern: REGEXP_EMAIL,
       },
       label: 'Почта',
       name: 'email',
@@ -40,7 +40,7 @@ class SignupForm extends Block {
         required: true,
         minlength: 3,
         maxlength: 20,
-        pattern: regexpLogin,
+        pattern: REGEXP_LOGIN,
       },
       label: 'Логин',
       name: 'login',
@@ -52,7 +52,7 @@ class SignupForm extends Block {
         type: 'text',
         name: 'first_name',
         required: true,
-        pattern: regexpName,
+        pattern: REGEXP_NAME,
       },
       label: 'Имя',
       name: 'first_name',
@@ -64,7 +64,7 @@ class SignupForm extends Block {
         type: 'text',
         name: 'second_name',
         required: true,
-        pattern: regexpName,
+        pattern: REGEXP_NAME,
       },
       label: 'Фамилия',
       name: 'second_name',
@@ -76,7 +76,7 @@ class SignupForm extends Block {
         type: 'tel',
         name: 'phone',
         required: true,
-        pattern: regexpPhone,
+        pattern: REGEXP_PHONE,
       },
       label: 'Телефон',
       name: 'phone',
@@ -90,7 +90,7 @@ class SignupForm extends Block {
         required: true,
         minlength: 8,
         maxlength: 40,
-        pattern: regexpPassword,
+        pattern: REGEXP_PASSWORD,
       },
       label: 'Пароль',
       name: 'password',
@@ -104,7 +104,7 @@ class SignupForm extends Block {
         required: true,
         minlength: 8,
         maxlength: 40,
-        pattern: regexpPassword,
+        pattern: REGEXP_PASSWORD,
       },
       label: 'Пароль (еще раз)',
       name: 'passwordCheck',
