@@ -9,7 +9,7 @@ import {
   setMessage,
 } from '@helpers';
 import { TEvents } from '@types';
-import Input, { IInput } from '@ui/input/input';
+import Input, { IInput } from '@components/ui/input/input';
 import Block from '@utils/Block';
 
 interface IFormField {

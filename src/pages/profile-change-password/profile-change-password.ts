@@ -3,7 +3,7 @@ import template from './profile-change-password.tpl.pug';
 import arrowLeft from '@assets/arrow-left.svg';
 import ProfileChangePassword from '@components/profile/profile-change-password/profile-change-password';
 import { getDataObject } from '@helpers';
-import Icon from '@ui/icon/icon';
+import Icon from '@components/ui/icon/icon';
 import Block from '@utils/Block';
 import renderDOM from '@utils/renderDOM';
 

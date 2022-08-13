@@ -3,8 +3,8 @@ import template from './form-signup.tpl.pug';
 import FormField from '@components/auth/auth-field/auth-field';
 import { REGEXP_EMAIL, REGEXP_LOGIN, REGEXP_NAME, REGEXP_PASSWORD, REGEXP_PHONE } from '@constants';
 import { TEvents } from '@types';
-import Button from '@ui/button/button';
-import Link from '@ui/link/link';
+import Button from '@components/ui/button/button';
+import Link from '@components/ui/link/link';
 import Block from '@utils/Block';
 
 interface ISignupForm {

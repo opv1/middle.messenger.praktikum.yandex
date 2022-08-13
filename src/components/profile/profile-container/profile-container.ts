@@ -1,7 +1,7 @@
 import template from './profile-container.tpl.pug';
 
 import { IProfileItem } from '@types';
-import Link from '@ui/link/link';
+import Link from '@components/ui/link/link';
 import Block from '@utils/Block';
 
 interface IProfile {

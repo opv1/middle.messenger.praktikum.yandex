@@ -3,7 +3,7 @@ import template from './profile-change-info.tpl.pug';
 import FormField from '@components/auth/auth-field/auth-field';
 import { REGEXP_EMAIL, REGEXP_LOGIN, REGEXP_NAME, REGEXP_PHONE } from '@constants';
 import { TEvents } from '@types';
-import Button from '@ui/button/button';
+import Button from '@components/ui/button/button';
 import Block from '@utils/Block';
 
 interface IProfileChangeInfo {

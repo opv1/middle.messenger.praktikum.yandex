@@ -2,7 +2,7 @@ import template from './chat-search.tpl.pug';
 
 import iconSearch from '@assets/icon-search.svg';
 import { TEvents } from '@types';
-import Icon from '@ui/icon/icon';
+import Icon from '@components/ui/icon/icon';
 import Block from '@utils/Block';
 
 interface ISearch {
