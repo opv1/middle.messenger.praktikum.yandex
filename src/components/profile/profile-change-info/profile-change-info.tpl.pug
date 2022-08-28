@@ -3,6 +3,11 @@ include ../profile-item/profile-item
 form.profile__container
   .profile__header
     .profile__avatar
+      if avatar
+        img(
+          src=`https://ya-praktikum.tech/api/v2/resources${avatar}`,
+          alt='avatar'
+        )
   .profile__main
     +profileItem('Почта')
       | !{ emailField }
@@ -17,4 +22,7 @@ form.profile__container
     +profileItem('Телефон')
       | !{ phoneField }
   .profile__footer
+    .profile__add
+      span Обновить аватар
+      | !{ avatarInput }
     | !{ saveButton }

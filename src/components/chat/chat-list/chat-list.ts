@@ -1,10 +1,16 @@
 import template from './chat-list.tpl.pug';
 
-import { IChatItem } from '@types';
+import Button from '@components/ui/button/button';
+import Input from '@components/ui/input/input';
+import ChatsController from '@controllers/ChatsController';
+import { withChats } from '@hoc';
+import { EventsType, IChatItem } from '@types';
+import { IChatCreate } from '@types';
 import Block from '@utils/Block';
 
 interface IChatList {
-  items: IChatItem[];
+  chats?: IChatItem[];
+  events?: EventsType;
 }
 
 class ChatList extends Block {
@@ -12,9 +18,41 @@ class ChatList extends Block {
     super(props);
   }
 
+  protected initChildren(): void {
+    this.childrens.chatInput = new Input({
+      id: 'nameChat',
+      classes: 'input__none',
+      type: 'text',
+      name: 'name',
+      placeholder: 'Введите название чата',
+    });
+
+    this.childrens.addButton = new Button({
+      type: 'button',
+      name: 'addChat',
+      text: 'Добавить новый чат',
+      events: {
+        click: (event) => this.clickHandler(event),
+      },
+    });
+  }
+
+  clickHandler(event: Event) {
+    event.preventDefault();
+
+    const inputName = document.getElementById('nameChat') as HTMLInputElement;
+    const inputValue = inputName!.value;
+
+    if (inputValue !== '') {
+      const data = { title: inputValue };
+      ChatsController.addChat(data as unknown as IChatCreate);
+      inputName.value = '';
+    }
+  }
+
   render() {
     return this.compile(template, { ...this.props });
   }
 }
 
-export default ChatList;
+export default withChats(ChatList);

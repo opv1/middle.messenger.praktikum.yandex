@@ -20,4 +20,9 @@
   .isError & {
     border-color: $red;
   }
+
+  &__none {
+    border: none;
+    text-align: center;
+  }
 }

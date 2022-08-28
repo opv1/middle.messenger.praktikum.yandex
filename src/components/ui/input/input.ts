@@ -4,6 +4,7 @@ import { EventsType } from '@types';
 import Block from '@utils/Block';
 
 export interface IInput {
+  id?: string;
   classes?: string;
   type: string;
   name: string;
@@ -14,6 +15,7 @@ export interface IInput {
   maxlength?: number;
   pattern?: string;
   validate?: boolean;
+  accept?: string;
   events?: EventsType;
 }
 

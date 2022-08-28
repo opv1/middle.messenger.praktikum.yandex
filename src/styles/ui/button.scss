@@ -10,4 +10,8 @@
   color: #fff;
   background: $blue;
   cursor: pointer;
+
+  &__small {
+    width: max-content;
+  }
 }

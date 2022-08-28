@@ -2,7 +2,10 @@ import template from './profile-change-info.tpl.pug';
 
 import FormField from '@components/auth/auth-field/auth-field';
 import Button from '@components/ui/button/button';
+import Input from '@components/ui/input/input';
 import { REGEXP_EMAIL, REGEXP_LOGIN, REGEXP_NAME, REGEXP_PHONE } from '@constants';
+import UserController from '@controllers/UserController';
+import { withUser } from '@hoc/withUser';
 import { EventsType } from '@types';
 import Block from '@utils/Block';
 
@@ -17,6 +20,7 @@ class ProfileChangeInfo extends Block {
 
   protected initChildren() {
     this.childrens.emailField = new FormField({
+      classes: 'profile__field',
       inputProps: {
         type: 'email',
         name: 'email',
@@ -24,11 +28,11 @@ class ProfileChangeInfo extends Block {
         required: true,
         pattern: REGEXP_EMAIL,
       },
-      classes: 'profile__field',
       validate: true,
     });
 
     this.childrens.loginField = new FormField({
+      classes: 'profile__field',
       inputProps: {
         type: 'text',
         name: 'login',
@@ -38,11 +42,11 @@ class ProfileChangeInfo extends Block {
         maxlength: 20,
         pattern: REGEXP_LOGIN,
       },
-      classes: 'profile__field',
       validate: true,
     });
 
     this.childrens.firstNameField = new FormField({
+      classes: 'profile__field',
       inputProps: {
         type: 'text',
         name: 'first_name',
@@ -50,11 +54,11 @@ class ProfileChangeInfo extends Block {
         required: true,
         pattern: REGEXP_NAME,
       },
-      classes: 'profile__field',
       validate: true,
     });
 
     this.childrens.secondNameField = new FormField({
+      classes: 'profile__field',
       inputProps: {
         type: 'text',
         name: 'second_name',
@@ -62,11 +66,11 @@ class ProfileChangeInfo extends Block {
         required: true,
         pattern: REGEXP_NAME,
       },
-      classes: 'profile__field',
       validate: true,
     });
 
     this.childrens.displayNameField = new FormField({
+      classes: 'profile__field',
       inputProps: {
         type: 'text',
         name: 'display_name',
@@ -74,11 +78,11 @@ class ProfileChangeInfo extends Block {
         required: true,
         pattern: REGEXP_NAME,
       },
-      classes: 'profile__field',
       validate: true,
     });
 
     this.childrens.phoneField = new FormField({
+      classes: 'profile__field',
       inputProps: {
         type: 'tel',
         name: 'phone',
@@ -86,21 +90,41 @@ class ProfileChangeInfo extends Block {
         required: true,
         pattern: REGEXP_PHONE,
       },
-      classes: 'profile__field',
       validate: true,
     });
 
+    this.childrens.avatarInput = new Input({
+      type: 'file',
+      name: 'avatar',
+      accept: 'image/*',
+      events: {
+        change: (event) => this.changeHandler(event),
+      },
+    });
+
     this.childrens.saveButton = new Button({
+      classes: 'profile__button',
       type: 'submit',
       name: 'Сохранить',
       text: 'Сохранить',
-      classes: 'profile__button',
     });
   }
 
+  changeHandler(event: Event) {
+    event.preventDefault();
+
+    const input = event.target as HTMLInputElement;
+    const formData = new FormData();
+    formData.append('avatar', input.files![0]);
+
+    UserController.updateAvatar(formData);
+  }
+
   render() {
-    return this.compile(template, {});
+    return this.compile(template, {
+      ...this.props,
+    });
   }
 }
 
-export default ProfileChangeInfo;
+export default withUser(ProfileChangeInfo);

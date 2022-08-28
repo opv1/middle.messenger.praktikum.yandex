@@ -1,0 +1,12 @@
+mixin chatItem(data)
+  button.chat__item(id=data.id, type='button', name='chat')
+    .chat__item-img
+    .chat__item-main
+      span.chat__item-title= data.title
+      if data.last_message
+        p.chat__item-preview= data.last_message.content
+    .chat__item-info
+      .chat__item-date= data.date
+      if data.count
+        .chat__item-counter
+          span= data.unread_count

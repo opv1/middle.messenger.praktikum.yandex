@@ -115,7 +115,7 @@ class SignupForm extends Block {
     });
 
     this.childrens.signinLink = new Link({
-      url: '/index.html',
+      url: '/',
       name: 'Войти',
     });
   }

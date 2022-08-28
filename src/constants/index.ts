@@ -1,4 +1,12 @@
-import { Message } from '@types';
+import ChatPage from '@pages/chat/chat';
+import ErrorClientPage from '@pages/error-client/error-client';
+import ErrorServerPage from '@pages/error-server/error-server';
+import ProfilePage from '@pages/profile/profile';
+import ProfileInfoPage from '@pages/profile-info/profile-info';
+import ProfilePasswordPage from '@pages/profile-password/profile-password';
+import SigninPage from '@pages/signin/signin';
+import SignupPage from '@pages/signup/signup';
+import { Endpoints, IPage } from '@types';
 
 export const REGEXP_NAME = '^(?=.*[A-ZА-ЯЁ])([A-Za-zА-Яа-яЁё\\-]+)';
 
@@ -14,115 +22,41 @@ export const REGEXP_PHONE =
 
 export const REGEXP_MESSAGE = '.+';
 
-export const data = [
-  {
-    title: 'Андрей',
-    preview: 'Изображение',
-    date: '10:49',
-    count: '2',
-  },
-  {
-    title: 'Киноклуб',
-    preview: 'Вы: стикер',
-    date: '12:00',
-    count: '',
-  },
-  {
-    title: 'Илья',
-    preview: 'Друзья, у меня для вас особенный выпуск новостей!...',
-    date: '15:12',
-    count: '4',
-  },
-  {
-    title: 'Вадим',
-    preview: 'Вы: Круто!',
-    date: 'Пт',
-    count: '',
-  },
-  {
-    title: 'Андрей',
-    preview: 'Изображение',
-    date: '10:49',
-    count: '2',
-  },
-  {
-    title: 'Киноклуб',
-    preview: 'Вы: стикер',
-    date: '12:00',
-    count: '',
-  },
-  {
-    title: 'Илья',
-    preview: 'Друзья, у меня для вас особенный выпуск новостей!...',
-    date: '15:12',
-    count: '4',
-  },
-  {
-    title: 'Вадим',
-    preview: 'Вы: Круто!',
-    date: 'Пт',
-    count: '',
-  },
-];
+export const BASE_URL = 'https://ya-praktikum.tech/api/v2';
 
-export const profileInfo = [
-  {
-    name: 'Почта',
-    value: 'pochta@yandex.ru',
-  },
-  {
-    name: 'Логин',
-    value: 'ivanivanov',
-  },
-  {
-    name: 'Имя',
-    value: 'Иван',
-  },
-  {
-    name: 'Фамилия',
-    value: 'Иванов',
-  },
-  {
-    name: 'Имя в чате',
-    value: 'Иван',
-  },
-  {
-    name: 'Телефон',
-    value: '+7 (909) 967 30 30',
-  },
-];
+export const BASE_URL_SOCKET = 'wss://ya-praktikum.tech/ws/chats/';
 
-export const messages = [
+export const PAGES: IPage[] = [
   {
-    type: Message.DATE,
-    value: '19 июня',
+    path: [Endpoints.INDEX, Endpoints.SIGNIN],
+    block: SigninPage,
   },
   {
-    type: Message.INBOX,
-    value:
-      'Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой. Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000 евро.',
-    date: '11:56',
+    path: Endpoints.SIGNUP,
+    block: SignupPage,
   },
   {
-    type: Message.OUTBOX,
-    value: 'Круто!',
-    date: '12:00',
-    sended: true,
+    path: Endpoints.CHAT,
+    block: ChatPage,
   },
   {
-    type: Message.DATE,
-    value: '21 июня',
+    path: Endpoints.PROFILE,
+    block: ProfilePage,
   },
   {
-    type: Message.INBOX,
-    value:
-      'Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой. Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000 евро.',
-    date: '11:56',
+    path: Endpoints.PROFILE_INFO,
+    block: ProfileInfoPage,
   },
   {
-    type: Message.OUTBOX,
-    value: 'Круто!',
-    date: '12:00',
-    sended: true,
+    path: Endpoints.PROFILE_PASSWORD,
+    block: ProfilePasswordPage,
+  },
+  {
+    path: Endpoints.ERROR_CLIENT,
+    block: ErrorClientPage,
+  },
+  {
+    path: Endpoints.ERROR_SERVER,
+    block: ErrorServerPage,
   },
 ];

@@ -1,15 +1,12 @@
 import template from './signup.tpl.pug';
 
 import SignupForm from '@components/auth/auth-signup/form-signup';
+import AuthController from '@controllers/AuthController';
 import { getDataObject } from '@helpers';
+import { ISignUpFormData } from '@types';
 import Block from '@utils/Block';
-import renderDOM from '@utils/renderDOM';
 
 class SignupPage extends Block {
-  constructor() {
-    super();
-  }
-
   protected initChildren() {
     this.childrens.form = new SignupForm({
       method: 'POST',
@@ -24,8 +21,9 @@ class SignupPage extends Block {
 
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
+    const data = getDataObject(formData);
 
-    console.log(getDataObject(formData));
+    AuthController.signUp(data as unknown as ISignUpFormData);
   }
 
   render() {
@@ -33,8 +31,4 @@ class SignupPage extends Block {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const page = new SignupPage();
-
-  renderDOM('#app', page);
-});
+export default SignupPage;

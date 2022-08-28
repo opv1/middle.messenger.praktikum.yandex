@@ -1,8 +1,8 @@
-mixin message(item)
+mixin message(message, type)
   .chat__message(
-    class=item.type === 'inbox' ? 'chat__message--inbox' : 'chat__message--outbox'
-  )= item.value
+    class=type === 'inbox' ? 'chat__message__inbox' : 'chat__message__outbox'
+  )= message.content
     span.chat__message__info
-      if item.sended
+      if message.is_read === true
         span.chat__message__sended
-      time.chat__message__date= item.date
+      time.chat__message__date= message.time

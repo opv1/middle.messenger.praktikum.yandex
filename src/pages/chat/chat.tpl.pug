@@ -1,8 +1,10 @@
 extends ../../layouts/chat/chat
 
 block sidebar
-  | !{ chatHeader }
+  | !{ chatHead }
   | !{ chatList }
 
 block content
-  span.chat__empty Выберите чат чтобы отправить сообщение
+  | !{ chatHeader }
+  | !{ chatView }
+  | !{ chatFooter }

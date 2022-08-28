@@ -71,6 +71,13 @@
     scrollbar-width: none;
   }
 
+  &__add {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
   &__item {
     display: flex;
     border-bottom: 1px solid #eaeaea;
@@ -194,6 +201,10 @@
     padding: 12px 0;
     width: 100%;
     height: 60px;
+
+    &_hide {
+      display: none;
+    }
   }
 
   &__name {
@@ -216,6 +227,12 @@
       line-height: 13px;
       color: $black;
     }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
 
   &__button {
@@ -261,9 +278,24 @@
       margin-bottom: 10px;
     }
 
+    &__inbox {
+      div {
+        border-top-left-radius: 0;
+        background: #f8f8f8;
+      }
+
+      .chat__message__date {
+        color: #999;
+      }
+    }
+
     &__outbox {
-      display: flex;
-      justify-content: end;
+      text-align: right;
+
+      div {
+        border-bottom-right-radius: 0;
+        background: #e4edfd;
+      }
     }
   }
 
@@ -304,20 +336,6 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-color: transparent;
-    }
-
-    &--inbox {
-      border-top-left-radius: 0;
-      background: #f8f8f8;
-
-      .chat__message__date {
-        color: #999;
-      }
-    }
-
-    &--outbox {
-      border-bottom-right-radius: 0;
-      background: #e4edfd;
     }
   }
 
@@ -360,6 +378,10 @@
     border-top: 1px solid #eaeaea;
     padding: 12px 0;
     width: 100%;
+
+    &_hide {
+      display: none;
+    }
 
     &-submit {
       display: flex;

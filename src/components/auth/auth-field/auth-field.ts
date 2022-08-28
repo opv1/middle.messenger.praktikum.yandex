@@ -13,11 +13,11 @@ import { EventsType } from '@types';
 import Block from '@utils/Block';
 
 interface IFormField {
+  classes?: string;
   inputProps: IInput;
   name?: string;
   label?: string;
   validate?: boolean;
-  classes?: string;
   events?: EventsType;
 }
 

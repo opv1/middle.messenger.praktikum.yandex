@@ -17,7 +17,7 @@ class ChatHead extends Block {
 
     this.childrens.profileLink = new Link({
       classes: 'chat__link',
-      url: '/profile/profile.html',
+      url: '/profile',
       name: 'Профиль',
       block: new Icon({
         src: arrowIcon,

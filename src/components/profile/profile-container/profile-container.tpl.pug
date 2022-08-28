@@ -3,10 +3,15 @@ include ../profile-item/profile-item
 .profile__container
   .profile__header
     .profile__avatar
-    span.profile__title= 'Иван'
+      if avatar
+        img(
+          src=`https://ya-praktikum.tech/api/v2/resources${avatar}`,
+          alt='avatar'
+        )
+    span.profile__title= `${first_name} ${second_name}`
   .profile__main
-    if data
-      each item in data
+    if items
+      each item in items
         +profileItem(item.name, item.value)
   .profile__footer
     +profileItem

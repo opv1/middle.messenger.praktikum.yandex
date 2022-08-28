@@ -1,6 +1,11 @@
-.chat__header
+.chat__header(class=id ? '' : 'chat__header_hide')
   .chat__name
     .chat__name-img
-    .chat__name-value= 'Вадим'
-  button.chat__button(type='button', name='settings')
-    | !{ settingsIcon }
+    .chat__name-value= title
+  .chat__row
+    | !{ loginUser }
+    | !{ addUserButton }
+    | !{ deleteUserButton }
+    | !{ deleteChatButton }
+    button.chat__button(type='button', name='settings')
+      | !{ settingsIcon }

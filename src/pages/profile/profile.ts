@@ -1,23 +1,15 @@
 import template from './profile.tpl.pug';
 
 import arrowIcon from '@assets/arrow-left.svg';
-import Profile from '@components/profile/profile-container/profile-container';
+import ProfileContainer from '@components/profile/profile-container/profile-container';
 import Icon from '@components/ui/icon/icon';
-import { profileInfo } from '@constants';
 import Block from '@utils/Block';
-import renderDOM from '@utils/renderDOM';
 
 class ProfilePage extends Block {
-  constructor() {
-    super();
-  }
-
   protected initChildren() {
-    this.childrens.profile = new Profile({
-      data: profileInfo,
-    });
+    this.childrens.profileContainer = new ProfileContainer({});
 
-    this.childrens.icon = new Icon({
+    this.childrens.backIcon = new Icon({
       src: arrowIcon,
     });
   }
@@ -27,8 +19,4 @@ class ProfilePage extends Block {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const page = new ProfilePage();
-
-  renderDOM('#app', page);
-});
+export default ProfilePage;

@@ -1,5 +1,7 @@
 import template from './chat-view.tpl.pug';
 
+import { withActiveChat } from '@hoc';
+import { withUser } from '@hoc/withUser';
 import { IMessageItem } from '@types';
 import Block from '@utils/Block';
 
@@ -13,8 +15,10 @@ class ChatView extends Block {
   }
 
   render() {
-    return this.compile(template, { ...this.props });
+    console.log(this.props.messages);
+
+    return this.compile(template, { data: this.props.messages, ...this.props });
   }
 }
 
-export default ChatView;
+export default withActiveChat(withUser(ChatView));

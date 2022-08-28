@@ -3,7 +3,9 @@ import template from './chat-footer.tpl.pug';
 import attachmentIcon from '@assets/icon-attachment.svg';
 import ChatForm from '@components/chat/chat-form/chat-form';
 import Icon from '@components/ui/icon/icon';
+import ChatsController from '@controllers/ChatsController';
 import { getDataObject } from '@helpers';
+import { withActiveChat } from '@hoc';
 import Block from '@utils/Block';
 
 class ChatFooter extends Block {
@@ -24,13 +26,15 @@ class ChatFooter extends Block {
 
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
+    const data = getDataObject(formData);
 
-    console.log(getDataObject(formData));
+    ChatsController.sendMessage(String(data.message));
+    form.reset();
   }
 
   render() {
-    return this.compile(template, {});
+    return this.compile(template, { ...this.props.chat });
   }
 }
 
-export default ChatFooter;
+export default withActiveChat(ChatFooter);
