@@ -25,7 +25,7 @@ npm run test
 
 ## PR Sprint 3
 
-https://github.com/opv1/middle.messenger.praktikum.yandex/pull/3
+https://github.com/opv1/middle.messenger.praktikum.yandex/pull/4
 
 ## Figma
 
