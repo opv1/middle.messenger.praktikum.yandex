@@ -95,12 +95,10 @@ class Block {
 
     if (this._element) {
       this._removeEvents();
-
       this._element.replaceWith(newElement);
     }
 
     this._element = newElement;
-
     this._addEvents();
   }
 

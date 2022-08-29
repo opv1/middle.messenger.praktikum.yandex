@@ -3,7 +3,7 @@ import template from './chat-list.tpl.pug';
 import Button from '@components/ui/button/button';
 import Input from '@components/ui/input/input';
 import ChatsController from '@controllers/ChatsController';
-import { withChats } from '@hoc';
+import { withChats } from '@hoc/withChats';
 import { EventsType, IChatItem } from '@types';
 import { IChatCreate } from '@types';
 import Block from '@utils/Block';

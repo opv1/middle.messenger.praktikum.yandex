@@ -5,7 +5,7 @@ import Button from '@components/ui/button/button';
 import Icon from '@components/ui/icon/icon';
 import Input from '@components/ui/input/input';
 import ChatsController from '@controllers/ChatsController';
-import { withActiveChat } from '@hoc';
+import { withActiveChat } from '@hoc/withActiveChat';
 import Block from '@utils/Block';
 
 class ChatHeader extends Block {

@@ -22,6 +22,8 @@ export const REGEXP_PHONE =
 
 export const REGEXP_MESSAGE = '.+';
 
+export const APP_SELECTOR = '#app';
+
 export const BASE_URL = 'https://ya-praktikum.tech/api/v2';
 
 export const BASE_URL_SOCKET = 'wss://ya-praktikum.tech/ws/chats/';

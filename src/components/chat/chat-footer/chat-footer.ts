@@ -5,7 +5,7 @@ import ChatForm from '@components/chat/chat-form/chat-form';
 import Icon from '@components/ui/icon/icon';
 import ChatsController from '@controllers/ChatsController';
 import { getDataObject } from '@helpers';
-import { withActiveChat } from '@hoc';
+import { withActiveChat } from '@hoc/withActiveChat';
 import Block from '@utils/Block';
 
 class ChatFooter extends Block {

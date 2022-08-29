@@ -1,6 +1,6 @@
 import template from './chat-view.tpl.pug';
 
-import { withActiveChat } from '@hoc';
+import { withActiveChat } from '@hoc/withActiveChat';
 import { withUser } from '@hoc/withUser';
 import { IMessageItem } from '@types';
 import Block from '@utils/Block';

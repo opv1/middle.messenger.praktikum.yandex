@@ -1,6 +1,6 @@
 import { setFormat } from './setFormatDate';
 
-import { IChatItem } from 'src/types';
+import { IChatItem } from '@types';
 
 export const getDateChats = (chats: IChatItem[]) => {
   chats.map((chat) => {

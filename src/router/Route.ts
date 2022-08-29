@@ -1,6 +1,5 @@
 import Block from '@utils/Block';
 import renderDOM from '@utils/renderDOM';
-// import { updatePageTitle } from 'src/utils/updatePageTitle/updatePageTitle';
 
 export default class Route {
   private pathname: string;
@@ -36,8 +35,6 @@ export default class Route {
     if (!this.block) {
       this.block = new this.blockClass();
     }
-
-    // if (this.props.title) updatePageTitle(this.props.title);
 
     renderDOM(this.props.rootQuery, this.block);
   }

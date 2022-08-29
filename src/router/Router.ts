@@ -1,9 +1,6 @@
-// import { APP_SELECTOR } from 'src/constants/common';
-
-export const APP_SELECTOR = '#app';
-
 import Route from './Route';
 
+import { APP_SELECTOR } from '@constants';
 import Block from '@utils/Block';
 
 export class Router {
@@ -18,7 +15,9 @@ export class Router {
       return Router.__instance;
     }
 
-    if (pageNotFound) this.pageNotFound = pageNotFound;
+    if (pageNotFound) {
+      this.pageNotFound = pageNotFound;
+    }
 
     Router.__instance = this;
   }
@@ -27,12 +26,10 @@ export class Router {
     if (Array.isArray(pathname)) {
       pathname.map((path) => {
         const route = new Route(path, block, { ...props, rootQuery: APP_SELECTOR });
-
         this.routes.push(route);
       });
     } else {
       const route = new Route(pathname, block, { ...props, rootQuery: APP_SELECTOR });
-
       this.routes.push(route);
     }
 
@@ -64,11 +61,16 @@ export class Router {
     const route = this.getRoute(pathname);
 
     if (!route) {
-      if (this.pageNotFound) this.go(this.pageNotFound);
+      if (this.pageNotFound) {
+        this.go(this.pageNotFound);
+      }
+
       return;
     }
 
-    if (this.currentRoute) this.currentRoute.leave();
+    if (this.currentRoute) {
+      this.currentRoute.leave();
+    }
 
     this.currentRoute = route;
 
