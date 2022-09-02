@@ -21,14 +21,18 @@ class ProfilePasswordPage extends Block {
     });
   }
 
-  submitHandler(event: Event) {
-    event.preventDefault();
+  async submitHandler(event: Event) {
+    try {
+      event.preventDefault();
 
-    const form = event.target as HTMLFormElement;
-    const formData = new FormData(form);
-    const data = getDataObject(formData);
+      const form = event.target as HTMLFormElement;
+      const formData = new FormData(form);
+      const data = getDataObject(formData);
 
-    UserController.updatePassword(data as unknown as IPasswordFormData);
+      await UserController.updatePassword(data as unknown as IPasswordFormData);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   render() {

@@ -16,14 +16,18 @@ class SigninPage extends Block {
     });
   }
 
-  submitHandler(event: Event) {
-    event.preventDefault();
+  async submitHandler(event: Event) {
+    try {
+      event.preventDefault();
 
-    const form = event.target as HTMLFormElement;
-    const formData = new FormData(form);
-    const data = getDataObject(formData);
+      const form = event.target as HTMLFormElement;
+      const formData = new FormData(form);
+      const data = getDataObject(formData);
 
-    AuthController.signIn(data as unknown as ISigninData);
+      await AuthController.signIn(data as unknown as ISigninData);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   render() {

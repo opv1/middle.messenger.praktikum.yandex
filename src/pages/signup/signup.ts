@@ -16,14 +16,18 @@ class SignupPage extends Block {
     });
   }
 
-  submitHandler(event: Event) {
-    event.preventDefault();
+  async submitHandler(event: Event) {
+    try {
+      event.preventDefault();
 
-    const form = event.target as HTMLFormElement;
-    const formData = new FormData(form);
-    const data = getDataObject(formData);
+      const form = event.target as HTMLFormElement;
+      const formData = new FormData(form);
+      const data = getDataObject(formData);
 
-    AuthController.signUp(data as unknown as ISignUpFormData);
+      await AuthController.signUp(data as unknown as ISignUpFormData);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   render() {

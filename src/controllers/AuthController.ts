@@ -11,21 +11,29 @@ class AuthController {
   }
 
   async signUp(data: ISignUpFormData) {
-    if (data.password !== data.passwordCheck) {
-      throw new Error('Проверьте пароли!');
+    try {
+      if (data.password !== data.passwordCheck) {
+        throw new Error('Проверьте пароли!');
+      }
+
+      await this.api.signUp(data);
+      await this.getUser();
+
+      router.go(Endpoints.CHAT);
+    } catch (error: any) {
+      console.error(error);
     }
-
-    await this.api.signUp(data);
-    await this.getUser();
-
-    router.go(Endpoints.CHAT);
   }
 
   async signIn(data: ISigninData) {
-    await this.api.signIn(data);
-    await this.getUser();
+    try {
+      await this.api.signIn(data);
+      await this.getUser();
 
-    router.go(Endpoints.CHAT);
+      router.go(Endpoints.CHAT);
+    } catch (error: any) {
+      console.error(error);
+    }
   }
 
   async getUser() {
@@ -46,6 +54,8 @@ class AuthController {
           break;
       }
     } catch (error) {
+      console.error(error);
+
       switch (path) {
         case Endpoints.INDEX:
         case Endpoints.SIGNIN:
@@ -59,8 +69,13 @@ class AuthController {
   }
 
   async logout() {
-    await this.api.logout();
-    router.go(Endpoints.INDEX);
+    try {
+      await this.api.logout();
+
+      router.go(Endpoints.INDEX);
+    } catch (error: any) {
+      console.error(error);
+    }
   }
 }
 

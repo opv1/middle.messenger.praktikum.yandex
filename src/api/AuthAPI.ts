@@ -22,9 +22,4 @@ export default class AuthAPI extends BaseAPI {
   logout(): Promise<XMLHttpRequestResponseType> {
     return this.http.post('/logout');
   }
-
-  create = undefined;
-  read = undefined;
-  update = undefined;
-  delete = undefined;
 }

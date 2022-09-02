@@ -110,14 +110,18 @@ class ProfileChangeInfo extends Block {
     });
   }
 
-  changeHandler(event: Event) {
-    event.preventDefault();
+  async changeHandler(event: Event) {
+    try {
+      event.preventDefault();
 
-    const input = event.target as HTMLInputElement;
-    const formData = new FormData();
-    formData.append('avatar', input.files![0]);
+      const input = event.target as HTMLInputElement;
+      const formData = new FormData();
+      formData.append('avatar', input.files![0]);
 
-    UserController.updateAvatar(formData);
+      await UserController.updateAvatar(formData);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   render() {

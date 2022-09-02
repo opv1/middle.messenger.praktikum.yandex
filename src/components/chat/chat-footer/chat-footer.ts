@@ -21,15 +21,20 @@ class ChatFooter extends Block {
     });
   }
 
-  submitHandler(event: Event) {
-    event.preventDefault();
+  async submitHandler(event: Event) {
+    try {
+      event.preventDefault();
 
-    const form = event.target as HTMLFormElement;
-    const formData = new FormData(form);
-    const data = getDataObject(formData);
+      const form = event.target as HTMLFormElement;
+      const formData = new FormData(form);
+      const data = getDataObject(formData);
 
-    ChatsController.sendMessage(String(data.message));
-    form.reset();
+      await ChatsController.sendMessage(String(data.message));
+
+      form.reset();
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   render() {

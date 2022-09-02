@@ -21,14 +21,18 @@ class ProfileInfoPage extends Block {
     });
   }
 
-  submitHandler(event: Event) {
-    event.preventDefault();
+  async submitHandler(event: Event) {
+    try {
+      event.preventDefault();
 
-    const form = event.target as HTMLFormElement;
-    const formData = new FormData(form);
-    const data = getDataObject(formData);
+      const form = event.target as HTMLFormElement;
+      const formData = new FormData(form);
+      const data = getDataObject(formData);
 
-    UserController.updateProfile(data as unknown as IUser);
+      await UserController.updateProfile(data as unknown as IUser);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   render() {

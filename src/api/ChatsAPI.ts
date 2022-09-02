@@ -31,9 +31,4 @@ export default class ChatsAPI extends BaseAPI {
   deleteUser(data: IChatUsersRequest): Promise<XMLHttpRequestResponseType> {
     return this.http.delete('/users', { data });
   }
-
-  create = undefined;
-  read = undefined;
-  update = undefined;
-  delete = undefined;
 }

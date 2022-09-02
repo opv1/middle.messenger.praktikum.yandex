@@ -37,16 +37,22 @@ class ChatList extends Block {
     });
   }
 
-  clickHandler(event: Event) {
-    event.preventDefault();
+  async clickHandler(event: Event) {
+    try {
+      event.preventDefault();
 
-    const inputName = document.getElementById('nameChat') as HTMLInputElement;
-    const inputValue = inputName!.value;
+      const inputName = document.getElementById('nameChat') as HTMLInputElement;
+      const inputValue = inputName!.value;
 
-    if (inputValue !== '') {
-      const data = { title: inputValue };
-      ChatsController.addChat(data as unknown as IChatCreate);
-      inputName.value = '';
+      if (inputValue !== '') {
+        const data = { title: inputValue };
+
+        await ChatsController.addChat(data as unknown as IChatCreate);
+
+        inputName.value = '';
+      }
+    } catch (error) {
+      console.error(error);
     }
   }
 

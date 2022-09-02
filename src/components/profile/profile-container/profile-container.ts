@@ -63,9 +63,19 @@ class ProfileContainer extends Block {
       name: 'logout',
       text: 'Выйти',
       events: {
-        click: () => AuthController.logout(),
+        click: (event) => this.clickHandler(event),
       },
     });
+  }
+
+  async clickHandler(event: Event) {
+    try {
+      event.preventDefault();
+
+      await AuthController.logout();
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   render() {

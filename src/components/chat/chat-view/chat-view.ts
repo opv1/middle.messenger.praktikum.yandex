@@ -15,8 +15,6 @@ class ChatView extends Block {
   }
 
   render() {
-    console.log(this.props.messages);
-
     return this.compile(template, { data: this.props.messages, ...this.props });
   }
 }

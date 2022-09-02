@@ -26,9 +26,4 @@ export default class UserAPI extends BaseAPI {
   search(data: IUserSearchRequest): Promise<XMLHttpRequestResponseType> {
     return this.http.post('/search', { data });
   }
-
-  create = undefined;
-  read = undefined;
-  update = undefined;
-  delete = undefined;
 }

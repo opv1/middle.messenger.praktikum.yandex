@@ -52,30 +52,46 @@ class ChatHeader extends Block {
     });
   }
 
-  addUserHandler(chatId: string) {
-    const inputName = document.getElementById('inputLogin') as HTMLInputElement;
-    const inputValue = inputName!.value;
+  async addUserHandler(chatId: string) {
+    try {
+      const inputName = document.getElementById('inputLogin') as HTMLInputElement;
+      const inputValue = inputName!.value;
 
-    if (inputValue !== '') {
-      const data = { login: inputValue, chatId };
-      ChatsController.addUser(data);
-      inputName.value = '';
+      if (inputValue !== '') {
+        const data = { login: inputValue, chatId };
+
+        await ChatsController.addUser(data);
+
+        inputName.value = '';
+      }
+    } catch (error) {
+      console.error(error);
     }
   }
 
-  deleteUserHandler(chatId: string) {
-    const inputName = document.getElementById('inputLogin') as HTMLInputElement;
-    const inputValue = inputName!.value;
+  async deleteUserHandler(chatId: string) {
+    try {
+      const inputName = document.getElementById('inputLogin') as HTMLInputElement;
+      const inputValue = inputName!.value;
 
-    if (inputValue !== '') {
-      const data = { login: inputValue, chatId };
-      ChatsController.deleteUser(data);
-      inputName.value = '';
+      if (inputValue !== '') {
+        const data = { login: inputValue, chatId };
+
+        await ChatsController.deleteUser(data);
+
+        inputName.value = '';
+      }
+    } catch (error) {
+      console.error(error);
     }
   }
 
-  deleteChatHandler(chatId: string) {
-    ChatsController.deleteChat(chatId);
+  async deleteChatHandler(chatId: string) {
+    try {
+      await ChatsController.deleteChat(chatId);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   render() {
