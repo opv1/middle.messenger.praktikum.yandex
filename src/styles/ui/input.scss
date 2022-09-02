@@ -1,0 +1,28 @@
+.input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid $blue;
+  padding: 7px 0;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 13px;
+  color: $black;
+
+  &::placeholder {
+    font-weight: 500;
+    font-style: normal;
+    font-size: 13px;
+    line-height: 13px;
+    color: #999;
+  }
+
+  .isError & {
+    border-color: $red;
+  }
+
+  &__none {
+    border: none;
+    text-align: center;
+  }
+}

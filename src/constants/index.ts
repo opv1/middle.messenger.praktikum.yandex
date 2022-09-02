@@ -1,128 +1,64 @@
-import { MessageType } from '@/types';
+import ChatPage from '@pages/chat/chat';
+import ErrorClientPage from '@pages/error-client/error-client';
+import ErrorServerPage from '@pages/error-server/error-server';
+import ProfilePage from '@pages/profile/profile';
+import ProfileInfoPage from '@pages/profile-info/profile-info';
+import ProfilePasswordPage from '@pages/profile-password/profile-password';
+import SigninPage from '@pages/signin/signin';
+import SignupPage from '@pages/signup/signup';
+import { Endpoints, IPage } from '@types';
 
-export const regexpName = '^(?=.*[A-ZА-ЯЁ])([A-Za-zА-Яа-яЁё\\-]+)';
+export const REGEXP_NAME = '^(?=.*[A-ZА-ЯЁ])([A-Za-zА-Яа-яЁё\\-]+)';
 
-export const regexpLogin = '(?=.*[A-Za-z])[A-Za-z0-9\\-_]+';
+export const REGEXP_LOGIN = '(?=.*[A-Za-z])[A-Za-z0-9\\-_]+';
 
-export const regexpEmail =
+export const REGEXP_EMAIL =
   '^([\\w-]+(?:\\.[\\w-]+)*)@((?:[\\w-]+\\.)*\\w[\\w-]{0,66})\\.([a-z]{2,6}(?:\\.[a-z]{2})?)$';
 
-export const regexpPassword = '(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,40}';
+export const REGEXP_PASSWORD = '(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,40}';
 
-export const regexpPhone =
+export const REGEXP_PHONE =
   '([\\+]*[7-8]{1}\\s?[\\(]*9[0-9]{2}[\\)]*\\s?\\d{3}[-]*\\d{2}[-]*\\d{2})';
 
-export const regexpMessage = '.+';
+export const REGEXP_MESSAGE = '.+';
 
-export const data = [
-  {
-    title: 'Андрей',
-    preview: 'Изображение',
-    date: '10:49',
-    count: '2',
-  },
-  {
-    title: 'Киноклуб',
-    preview: 'Вы: стикер',
-    date: '12:00',
-    count: '',
-  },
-  {
-    title: 'Илья',
-    preview: 'Друзья, у меня для вас особенный выпуск новостей!...',
-    date: '15:12',
-    count: '4',
-  },
-  {
-    title: 'Вадим',
-    preview: 'Вы: Круто!',
-    date: 'Пт',
-    count: '',
-  },
-  {
-    title: 'Андрей',
-    preview: 'Изображение',
-    date: '10:49',
-    count: '2',
-  },
-  {
-    title: 'Киноклуб',
-    preview: 'Вы: стикер',
-    date: '12:00',
-    count: '',
-  },
-  {
-    title: 'Илья',
-    preview: 'Друзья, у меня для вас особенный выпуск новостей!...',
-    date: '15:12',
-    count: '4',
-  },
-  {
-    title: 'Вадим',
-    preview: 'Вы: Круто!',
-    date: 'Пт',
-    count: '',
-  },
-];
+export const APP_SELECTOR = '#app';
 
-export const profileInfo = [
-  {
-    name: 'Почта',
-    value: 'pochta@yandex.ru',
-  },
-  {
-    name: 'Логин',
-    value: 'ivanivanov',
-  },
-  {
-    name: 'Имя',
-    value: 'Иван',
-  },
-  {
-    name: 'Фамилия',
-    value: 'Иванов',
-  },
-  {
-    name: 'Имя в чате',
-    value: 'Иван',
-  },
-  {
-    name: 'Телефон',
-    value: '+7 (909) 967 30 30',
-  },
-];
+export const BASE_URL = 'https://ya-praktikum.tech/api/v2';
 
-export const messages = [
+export const BASE_URL_SOCKET = 'wss://ya-praktikum.tech/ws/chats/';
+
+export const PAGES: IPage[] = [
   {
-    type: MessageType.DATE,
-    value: '19 июня',
+    path: [Endpoints.INDEX, Endpoints.SIGNIN],
+    block: SigninPage,
   },
   {
-    type: MessageType.INBOX,
-    value:
-      'Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой. Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000 евро.',
-    date: '11:56',
+    path: Endpoints.SIGNUP,
+    block: SignupPage,
   },
   {
-    type: MessageType.OUTBOX,
-    value: 'Круто!',
-    date: '12:00',
-    sended: true,
+    path: Endpoints.CHAT,
+    block: ChatPage,
   },
   {
-    type: MessageType.DATE,
-    value: '21 июня',
+    path: Endpoints.PROFILE,
+    block: ProfilePage,
   },
   {
-    type: MessageType.INBOX,
-    value:
-      'Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой. Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000 евро.',
-    date: '11:56',
+    path: Endpoints.PROFILE_INFO,
+    block: ProfileInfoPage,
   },
   {
-    type: MessageType.OUTBOX,
-    value: 'Круто!',
-    date: '12:00',
-    sended: true,
+    path: Endpoints.PROFILE_PASSWORD,
+    block: ProfilePasswordPage,
+  },
+  {
+    path: Endpoints.ERROR_CLIENT,
+    block: ErrorClientPage,
+  },
+  {
+    path: Endpoints.ERROR_SERVER,
+    block: ErrorServerPage,
   },
 ];

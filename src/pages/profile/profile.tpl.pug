@@ -1,10 +1,10 @@
-extends ../../layouts/profile/profile.pug
+extends ../../layouts/profile/profile
 
 block mixins
 
 block sidebar
-  a.profile__back(href='/chat/chat.html')
-    | !{ icon }
+  a.profile__back(href='/chat')
+    | !{ backIcon }
 
 block content
-  | !{ profile }
+  | !{ profileContainer }

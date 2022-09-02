@@ -3,7 +3,7 @@
   <img src="https://img.shields.io/badge/made%20by-opv1-blue.svg">
 </p>
 
-<!-- ## [See the project](https://dazzling-salmiakki-30009c.netlify.app) -->
+## [See the project](https://dazzling-salmiakki-30009c.netlify.app)
 
 ## Setup
 
@@ -19,9 +19,13 @@ npm run build
 npm run dev
 ```
 
-## PR Sprint 2
+```
+npm run test
+```
 
-https://github.com/opv1/middle.messenger.praktikum.yandex/pull/2
+## PR Sprint 3
+
+https://github.com/opv1/middle.messenger.praktikum.yandex/pull/4
 
 ## Figma
 

@@ -3,18 +3,26 @@ include ../profile-item/profile-item
 form.profile__container
   .profile__header
     .profile__avatar
+      if avatar
+        img(
+          src=`https://ya-praktikum.tech/api/v2/resources${avatar}`,
+          alt='avatar'
+        )
   .profile__main
     +profileItem('Почта')
-      | !{ email }
+      | !{ emailField }
     +profileItem('Логин')
-      | !{ login }
+      | !{ loginField }
     +profileItem('Имя')
-      | !{ firstName }
+      | !{ firstNameField }
     +profileItem('Фамилия')
-      | !{ secondName }
+      | !{ secondNameField }
     +profileItem('Имя в чате')
-      | !{ displayName }
+      | !{ displayNameField }
     +profileItem('Телефон')
-      | !{ phone }
+      | !{ phoneField }
   .profile__footer
+    .profile__add
+      span Обновить аватар
+      | !{ avatarInput }
     | !{ saveButton }

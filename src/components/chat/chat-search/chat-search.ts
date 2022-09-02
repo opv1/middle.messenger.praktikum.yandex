@@ -1,15 +1,12 @@
-import { TEvents } from '@/types';
-
-import Block from '@/utils/Block';
-
-import Icon from '@/ui/icon/icon';
-
 import template from './chat-search.tpl.pug';
 
-import iconSearch from '@/assets/icon-search.svg';
+import searchIcon from '@assets/icon-search.svg';
+import Icon from '@components/ui/icon/icon';
+import { EventsType } from '@types';
+import Block from '@utils/Block';
 
 interface ISearch {
-  events?: TEvents;
+  events?: EventsType;
 }
 
 class ChatSearch extends Block {
@@ -18,10 +15,8 @@ class ChatSearch extends Block {
   }
 
   protected initChildren() {
-    this.childrens.icon = new Icon({
-      id: iconSearch,
-      width: 20,
-      height: 20,
+    this.childrens.searchIcon = new Icon({
+      src: searchIcon,
     });
   }
 

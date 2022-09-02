@@ -1,21 +1,22 @@
-import { IMessageItem } from '@/types';
-
-import Block from '@/utils/Block';
-
 import template from './chat-view.tpl.pug';
+
+import { withActiveChat } from '@hoc/withActiveChat';
+import { withUser } from '@hoc/withUser';
+import { IMessageItem } from '@types';
+import Block from '@utils/Block';
 
 interface IMessageView {
   data: IMessageItem[];
 }
 
-class MessageView extends Block {
+class ChatView extends Block {
   constructor(props: IMessageView) {
     super(props);
   }
 
   render() {
-    return this.compile(template, { ...this.props });
+    return this.compile(template, { data: this.props.messages, ...this.props });
   }
 }
 
-export default MessageView;
+export default withActiveChat(withUser(ChatView));

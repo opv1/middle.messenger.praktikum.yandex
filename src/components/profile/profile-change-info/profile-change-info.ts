@@ -1,16 +1,16 @@
-import { TEvents } from '@/types';
-
-import Block from '@/utils/Block';
-
-import Button from '@/ui/button/button';
-
 import template from './profile-change-info.tpl.pug';
 
-import FormField from '@/components/auth/auth-field/auth-field';
-import { regexpEmail, regexpLogin, regexpName, regexpPhone } from '@/constants';
+import FormField from '@components/auth/auth-field/auth-field';
+import Button from '@components/ui/button/button';
+import Input from '@components/ui/input/input';
+import { REGEXP_EMAIL, REGEXP_LOGIN, REGEXP_NAME, REGEXP_PHONE } from '@constants';
+import UserController from '@controllers/UserController';
+import { withUser } from '@hoc/withUser';
+import { EventsType } from '@types';
+import Block from '@utils/Block';
 
 interface IProfileChangeInfo {
-  events?: TEvents;
+  events?: EventsType;
 }
 
 class ProfileChangeInfo extends Block {
@@ -19,19 +19,20 @@ class ProfileChangeInfo extends Block {
   }
 
   protected initChildren() {
-    this.childrens.email = new FormField({
+    this.childrens.emailField = new FormField({
+      classes: 'profile__field',
       inputProps: {
         type: 'email',
         name: 'email',
         placeholder: 'pochta@yandex.ru',
         required: true,
-        pattern: regexpEmail,
+        pattern: REGEXP_EMAIL,
       },
-      classes: 'profile__field',
       validate: true,
     });
 
-    this.childrens.login = new FormField({
+    this.childrens.loginField = new FormField({
+      classes: 'profile__field',
       inputProps: {
         type: 'text',
         name: 'login',
@@ -39,71 +40,95 @@ class ProfileChangeInfo extends Block {
         required: true,
         minlength: 3,
         maxlength: 20,
-        pattern: regexpLogin,
+        pattern: REGEXP_LOGIN,
       },
-      classes: 'profile__field',
       validate: true,
     });
 
-    this.childrens.firstName = new FormField({
+    this.childrens.firstNameField = new FormField({
+      classes: 'profile__field',
       inputProps: {
         type: 'text',
         name: 'first_name',
         placeholder: 'Иван',
         required: true,
-        pattern: regexpName,
+        pattern: REGEXP_NAME,
       },
-      classes: 'profile__field',
       validate: true,
     });
 
-    this.childrens.secondName = new FormField({
+    this.childrens.secondNameField = new FormField({
+      classes: 'profile__field',
       inputProps: {
         type: 'text',
         name: 'second_name',
         placeholder: 'Иванов',
         required: true,
-        pattern: regexpName,
+        pattern: REGEXP_NAME,
       },
-      classes: 'profile__field',
       validate: true,
     });
 
-    this.childrens.displayName = new FormField({
+    this.childrens.displayNameField = new FormField({
+      classes: 'profile__field',
       inputProps: {
         type: 'text',
         name: 'display_name',
         placeholder: 'Иван',
         required: true,
-        pattern: regexpName,
+        pattern: REGEXP_NAME,
       },
-      classes: 'profile__field',
       validate: true,
     });
 
-    this.childrens.phone = new FormField({
+    this.childrens.phoneField = new FormField({
+      classes: 'profile__field',
       inputProps: {
         type: 'tel',
         name: 'phone',
         placeholder: '+7 (909) 967 30 30',
         required: true,
-        pattern: regexpPhone,
+        pattern: REGEXP_PHONE,
       },
-      classes: 'profile__field',
       validate: true,
     });
 
+    this.childrens.avatarInput = new Input({
+      type: 'file',
+      name: 'avatar',
+      accept: 'image/*',
+      events: {
+        change: (event) => this.changeHandler(event),
+      },
+    });
+
     this.childrens.saveButton = new Button({
+      classes: 'profile__button',
       type: 'submit',
       name: 'Сохранить',
       text: 'Сохранить',
-      classes: 'profile__button',
     });
   }
 
+  async changeHandler(event: Event) {
+    try {
+      event.preventDefault();
+
+      const input = event.target as HTMLInputElement;
+      const formData = new FormData();
+      formData.append('avatar', input.files![0]);
+
+      await UserController.updateAvatar(formData);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   render() {
-    return this.compile(template, {});
+    return this.compile(template, {
+      ...this.props,
+    });
   }
 }
 
-export default ProfileChangeInfo;
+export default withUser(ProfileChangeInfo);

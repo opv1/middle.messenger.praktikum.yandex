@@ -1,41 +1,13 @@
-import Block from '@/utils/Block';
-import renderDOM from '@/utils/renderDOM';
+import { PAGES } from '@constants';
+import AuthController from '@controllers/AuthController';
+import router from '@router';
 
-import template from './index.tpl.pug';
+document.addEventListener('DOMContentLoaded', async () => {
+  PAGES.forEach((page) => {
+    router.use(page.path, page.block, page.props);
+  });
 
-import SigninForm from '@/components/auth/auth-signin/auth-signin';
-import { getDataObject } from '@/helpers';
+  router.start();
 
-class IndexPage extends Block {
-  constructor() {
-    super();
-  }
-
-  protected initChildren() {
-    this.childrens.form = new SigninForm({
-      method: 'POST',
-      events: {
-        submit: (event) => this.submitHandler(event),
-      },
-    });
-  }
-
-  submitHandler(event: Event) {
-    event.preventDefault();
-
-    const form = event.target as HTMLFormElement;
-    const formData = new FormData(form);
-
-    console.log(getDataObject(formData));
-  }
-
-  render() {
-    return this.compile(template, {});
-  }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  const page = new IndexPage();
-
-  renderDOM('#app', page);
+  await AuthController.getUser();
 });

@@ -1,0 +1,10 @@
+extends ../../layouts/profile/profile
+
+block mixins
+
+block sidebar
+  a.profile__back(href='/profile')
+    | !{ icon }
+
+block content
+  | !{ profileChangeInfo }

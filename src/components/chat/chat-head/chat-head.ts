@@ -1,30 +1,27 @@
-import Block from '@/utils/Block';
-
-import Icon from '@/ui/icon/icon';
-import Link from '@/ui/link/link';
-
 import template from './chat-head.tpl.pug';
 
-import arrowRight from '@/assets/arrow-right.svg';
-import ChatSearch from '@/components/chat/chat-search/chat-search';
-import { getDataObject } from '@/helpers';
+import arrowIcon from '@assets/arrow-right.svg';
+import ChatSearch from '@components/chat/chat-search/chat-search';
+import Icon from '@components/ui/icon/icon';
+import Link from '@components/ui/link/link';
+import { getDataObject } from '@helpers';
+import Block from '@utils/Block';
 
 class ChatHead extends Block {
   protected initChildren() {
-    this.childrens.link = new Link({
-      url: '/profile/profile.html',
-      name: 'Профиль',
-      block: new Icon({
-        id: arrowRight,
-        width: 6,
-        height: 10,
-      }),
-    });
-
     this.childrens.chatSearch = new ChatSearch({
       events: {
         submit: (event) => this.submitHandler(event),
       },
+    });
+
+    this.childrens.profileLink = new Link({
+      classes: 'chat__link',
+      url: '/profile',
+      name: 'Профиль',
+      block: new Icon({
+        src: arrowIcon,
+      }),
     });
   }
 

@@ -1,9 +1,9 @@
-type Handler = (...args: unknown[]) => void;
+type HandlerType = (...args: unknown[]) => void;
 
 class EventBus {
-  private listeners: Record<string, Handler[]> = {};
+  private listeners: Record<string, HandlerType[]> = {};
 
-  public on(event: string, callback: Handler): void {
+  public on(event: string, callback: HandlerType): void {
     if (!this.listeners[event]) {
       this.listeners[event] = [];
     }
@@ -11,7 +11,7 @@ class EventBus {
     this.listeners[event].push(callback);
   }
 
-  public off(event: string, callback: Handler): void {
+  public off(event: string, callback: HandlerType): void {
     if (!this.listeners[event]) {
       throw new Error(`Нет события: ${event}`);
     }

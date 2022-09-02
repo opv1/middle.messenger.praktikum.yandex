@@ -1,16 +1,14 @@
-import { TEvents } from '@/types';
-
-import Block from '@/utils/Block';
-
-import Button from '@/ui/button/button';
-
 import template from './profile-change-password.tpl.pug';
 
-import FormField from '@/components/auth/auth-field/auth-field';
-import { regexpPassword } from '@/constants';
+import FormField from '@components/auth/auth-field/auth-field';
+import Button from '@components/ui/button/button';
+import { REGEXP_PASSWORD } from '@constants';
+import { withUser } from '@hoc/withUser';
+import { EventsType } from '@types';
+import Block from '@utils/Block';
 
 interface IProfileChangePassword {
-  events?: TEvents;
+  events?: EventsType;
 }
 
 class ProfileChangePassword extends Block {
@@ -19,21 +17,22 @@ class ProfileChangePassword extends Block {
   }
 
   protected initChildren() {
-    this.childrens.oldPassword = new FormField({
+    this.childrens.oldPasswordField = new FormField({
+      classes: 'profile__field',
       inputProps: {
         type: 'password',
-        name: 'password',
+        name: 'oldPassword',
         placeholder: '•••••••••',
         required: true,
         minlength: 8,
         maxlength: 40,
-        pattern: regexpPassword,
+        pattern: REGEXP_PASSWORD,
       },
-      classes: 'profile__field',
       validate: true,
     });
 
-    this.childrens.newPassword = new FormField({
+    this.childrens.newPasswordField = new FormField({
+      classes: 'profile__field',
       inputProps: {
         type: 'password',
         name: 'newPassword',
@@ -41,37 +40,38 @@ class ProfileChangePassword extends Block {
         required: true,
         minlength: 8,
         maxlength: 40,
-        pattern: regexpPassword,
+        pattern: REGEXP_PASSWORD,
       },
-      classes: 'profile__field',
       validate: true,
     });
 
-    this.childrens.newPasswordRepeat = new FormField({
+    this.childrens.repeatPasswordField = new FormField({
+      classes: 'profile__field',
       inputProps: {
         type: 'password',
-        name: 'newPassword',
+        name: 'passwordCheck',
         placeholder: '•••••••••••',
         required: true,
         minlength: 8,
         maxlength: 40,
-        pattern: regexpPassword,
+        pattern: REGEXP_PASSWORD,
       },
-      classes: 'profile__field',
       validate: true,
     });
 
     this.childrens.saveButton = new Button({
+      classes: 'profile__button',
       type: 'submit',
       name: 'Сохранить',
       text: 'Сохранить',
-      classes: 'profile__button',
     });
   }
 
   render() {
-    return this.compile(template, {});
+    return this.compile(template, {
+      ...this.props,
+    });
   }
 }
 
-export default ProfileChangePassword;
+export default withUser(ProfileChangePassword);

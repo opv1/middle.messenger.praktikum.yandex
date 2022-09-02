@@ -4,10 +4,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: 64px;
-    min-width: 64px;
-    height: 100%;
     border-right: 1px solid #eaeaea;
+    height: 100%;
+    min-width: 64px;
+    max-width: 64px;
     background: #fbfbfb;
   }
 
@@ -15,11 +15,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: $blue;
-    width: 28px;
-    height: 28px;
     border-radius: 50%;
     padding: 7px;
+    width: 28px;
+    height: 28px;
+    background: $blue;
   }
 
   &__content {
@@ -32,9 +32,8 @@
   }
 
   &__container {
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 13px;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     max-width: 510px;
   }
@@ -56,17 +55,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    border-radius: 50%;
     width: 130px;
     height: 130px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 0 auto 20px;
     background-color: #efefef;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   &__title {
-    font-style: normal;
+    margin-top: 20px;
     font-weight: 600;
+    font-style: normal;
     font-size: 16px;
     line-height: 16px;
     color: $black;
@@ -79,25 +85,25 @@
     width: 100%;
 
     &:not(:last-child) {
-      padding-bottom: 10px;
       margin-bottom: 10px;
       border-bottom: 1px solid #eaeaea;
+      padding-bottom: 10px;
     }
 
     .input {
-      padding-top: 0;
       border-bottom: 0;
+      padding-top: 0;
       text-align: right;
     }
   }
 
   &__name {
-    font-style: normal;
+    width: 100%;
     font-weight: 500;
+    font-style: normal;
     font-size: 13px;
     line-height: 13px;
     color: $black;
-    width: 100%;
   }
 
   &__field {
@@ -110,19 +116,27 @@
   }
 
   &__value {
-    font-style: normal;
+    width: 100%;
     font-weight: 500;
+    font-style: normal;
     font-size: 13px;
     line-height: 13px;
-    color: #999;
     text-align: right;
-    width: 100%;
+    color: #999;
   }
 
   &__footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  &__add {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 20px;
   }
 
   &__button {

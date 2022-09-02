@@ -1,43 +1,38 @@
-import { TEvents } from '@/types';
-
-import Block from '@/utils/Block';
-
-import Button from '@/ui/button/button';
-import Icon from '@/ui/icon/icon';
-import Input from '@/ui/input/input';
-
 import template from './chat-form.tpl.pug';
 
-import arrowLeft from '@/assets/arrow-left.svg';
-import { regexpMessage } from '@/constants';
+import arrowIcon from '@assets/arrow-left.svg';
+import Button from '@components/ui/button/button';
+import Icon from '@components/ui/icon/icon';
+import Input from '@components/ui/input/input';
+import { REGEXP_MESSAGE } from '@constants';
+import { EventsType } from '@types';
+import Block from '@utils/Block';
 
 interface IMessageForm {
-  events?: TEvents;
+  events?: EventsType;
 }
 
-class MessageForm extends Block {
+class ChatForm extends Block {
   constructor(props: IMessageForm) {
     super(props);
   }
 
   protected initChildren(): void {
-    this.childrens.input = new Input({
+    this.childrens.messageInput = new Input({
       type: 'text',
       name: 'message',
       placeholder: 'Сообщение',
       classes: 'chat__form__text',
       required: true,
-      pattern: regexpMessage,
+      pattern: REGEXP_MESSAGE,
     });
 
-    this.childrens.button = new Button({
+    this.childrens.sendButton = new Button({
       type: 'submit',
       name: 'send',
       classes: 'chat__form__send',
       block: new Icon({
-        id: arrowLeft,
-        width: 24,
-        height: 24,
+        src: arrowIcon,
       }),
     });
   }
@@ -47,4 +42,4 @@ class MessageForm extends Block {
   }
 }
 
-export default MessageForm;
+export default ChatForm;

@@ -1,6 +1,9 @@
-include ../chat-item/chat-item.pug
+include ../chat-item/chat-item.tpl.pug
 
 .chat__list
-  if items
-    each item in items
-      +chatItem(item)
+  .chat__add
+    | !{ chatInput }
+    | !{ addButton }
+  if chats
+    each chat in chats
+      +chatItem(chat)

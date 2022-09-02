@@ -1,13 +1,15 @@
-include ../chat-message/chat-message.pug
+include ../chat-message/chat-message
 
 .chat__view
-  if data
-    each item in data
-      if item.type === 'date'
-        .chat__view__date= item.value
-      else if item.type === 'inbox'
-        .chat__view__inbox
-          +message(item)
-      else
+  if !chat
+    p Выберите чат чтобы отправить сообщение
+  if data.length !== 0
+    each message in data
+      if message.type === 'date'
+        .chat__view__date= message.value
+      else if message.user_id === id || message.userId === id
         .chat__view__outbox
-          +message(item)
+          +message(message, 'outbox')
+      else
+        .chat__view__inbox
+          +message(message, 'inbox')
