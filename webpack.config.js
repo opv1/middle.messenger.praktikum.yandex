@@ -4,12 +4,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
-const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
-  context: path.resolve(__dirname, 'src'),
   mode: isDev ? 'development' : 'production',
-  entry: './pages/index.ts',
+  entry: './src/pages/index.ts',
   output: {
     filename: isDev ? '[name].[contenthash].js' : '[name].js',
     path: path.resolve(__dirname, 'dist'),
@@ -21,11 +19,12 @@ module.exports = {
     },
   },
   optimization: {
-    splitChunks: {
-      chunks: 'all',
-    },
+    minimize: isDev ? false : true,
   },
   devServer: {
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
     port: 3000,
     hot: isDev,
     compress: true,
@@ -79,13 +78,10 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './pages/index.html',
-      minify: {
-        collapseWhitespace: isProd,
-      },
+      template: './src/pages/index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
+      filename: isDev ? 'styles/[name].[contenthash].css' : 'styles/[name].css',
     }),
     new CleanWebpackPlugin(),
   ],
