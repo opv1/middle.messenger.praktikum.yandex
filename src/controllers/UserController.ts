@@ -1,7 +1,7 @@
-import UserAPI from '@api/UserAPI';
-import router from '@router';
-import store from '@store';
-import { Endpoints, IPasswordFormData, IUser, IUserSearchRequest } from '@types';
+import UserAPI from 'src/api/UserAPI';
+import router from 'src/router';
+import store from 'src/store';
+import { Endpoints, IPasswordFormData, IUser, IUserSearchRequest } from 'src/types';
 
 class UserController {
   private api: UserAPI;

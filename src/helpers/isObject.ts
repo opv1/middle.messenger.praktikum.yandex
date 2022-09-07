@@ -1,7 +1,9 @@
-import { Indexed } from '@types';
+import { Indexed } from 'src/types';
 
 export const isObject = (item: Indexed<any> | undefined): boolean => {
-  if (!item) return false;
+  if (!item) {
+    return false;
+  }
 
   return item && typeof item === 'object' && !Array.isArray(item);
 };

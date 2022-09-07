@@ -1,12 +1,12 @@
 import template from './chat-form.tpl.pug';
 
-import arrowIcon from '@assets/arrow-left.svg';
-import Button from '@components/ui/button/button';
-import Icon from '@components/ui/icon/icon';
-import Input from '@components/ui/input/input';
-import { REGEXP_MESSAGE } from '@constants';
-import { EventsType } from '@types';
-import Block from '@utils/Block';
+import arrowIcon from 'src/assets/arrow-left.svg';
+import Button from 'src/components/ui/button/button';
+import Icon from 'src/components/ui/icon/icon';
+import Input from 'src/components/ui/input/input';
+import { REGEXP_MESSAGE } from 'src/constants';
+import { EventsType } from 'src/types';
+import Block from 'src/utils/Block';
 
 interface IMessageForm {
   events?: EventsType;

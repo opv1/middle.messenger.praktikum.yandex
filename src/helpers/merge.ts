@@ -1,13 +1,17 @@
 import { isObject } from './isObject';
 
-import { Indexed } from '@types';
+import { Indexed } from 'src/types';
 
 export const merge = (lhs: Indexed<any>, rhs: Indexed<any>): Indexed<any> => {
-  if (!rhs) return lhs;
+  if (!rhs) {
+    return lhs;
+  }
 
   const rhsArr: Indexed<any>[] = [rhs];
 
-  if (!rhsArr.length) return lhs;
+  if (!rhsArr.length) {
+    return lhs;
+  }
 
   const src = rhsArr.shift();
 

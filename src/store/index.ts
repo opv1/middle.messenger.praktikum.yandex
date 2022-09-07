@@ -1,6 +1,6 @@
-import { set } from '@helpers/set';
-import { IChatItem, IMessageItem, IUser } from '@types';
-import EventBus from '@utils/EventBus';
+import { set } from 'src/helpers/set';
+import { IChatItem, IMessageItem, IUser } from 'src/types';
+import EventBus from 'src/utils/EventBus';
 
 export enum StoreEvents {
   Updated = 'updated',

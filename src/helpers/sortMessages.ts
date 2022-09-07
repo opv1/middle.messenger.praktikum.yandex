@@ -1,4 +1,4 @@
-import { IMessageItem } from '@types';
+import { IMessageItem } from 'src/types';
 
 export const sortMessages = (messages: IMessageItem[]) => {
   if (Array.isArray(messages)) {

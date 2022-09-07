@@ -1,4 +1,4 @@
-import { Indexed } from '@types';
+import { Indexed } from 'src/types';
 
 export const isPlainObject = (value: unknown): value is Indexed => {
   return (

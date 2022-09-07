@@ -1,11 +1,11 @@
 import template from './chat-head.tpl.pug';
 
-import arrowIcon from '@assets/arrow-right.svg';
-import ChatSearch from '@components/chat/chat-search/chat-search';
-import Icon from '@components/ui/icon/icon';
-import Link from '@components/ui/link/link';
-import { getDataObject } from '@helpers';
-import Block from '@utils/Block';
+import arrowIcon from 'src/assets/arrow-right.svg';
+import ChatSearch from 'src/components/chat/chat-search/chat-search';
+import Icon from 'src/components/ui/icon/icon';
+import Link from 'src/components/ui/link/link';
+import { getDataObject } from 'src/helpers';
+import Block from 'src/utils/Block';
 
 class ChatHead extends Block {
   protected initChildren() {

@@ -1,13 +1,13 @@
 import template from './profile-change-info.tpl.pug';
 
-import FormField from '@components/auth/auth-field/auth-field';
-import Button from '@components/ui/button/button';
-import Input from '@components/ui/input/input';
-import { REGEXP_EMAIL, REGEXP_LOGIN, REGEXP_NAME, REGEXP_PHONE } from '@constants';
-import UserController from '@controllers/UserController';
-import { withUser } from '@hoc/withUser';
-import { EventsType } from '@types';
-import Block from '@utils/Block';
+import FormField from 'src/components/auth/auth-field/auth-field';
+import Button from 'src/components/ui/button/button';
+import Input from 'src/components/ui/input/input';
+import { REGEXP_EMAIL, REGEXP_LOGIN, REGEXP_NAME, REGEXP_PHONE } from 'src/constants';
+import UserController from 'src/controllers/UserController';
+import { withUser } from 'src/hoc/withUser';
+import { EventsType } from 'src/types';
+import Block from 'src/utils/Block';
 
 interface IProfileChangeInfo {
   events?: EventsType;
@@ -24,7 +24,7 @@ class ProfileChangeInfo extends Block {
       inputProps: {
         type: 'email',
         name: 'email',
-        placeholder: 'pochta@yandex.ru',
+        placeholder: 'pochtasrc/yandex.ru',
         required: true,
         pattern: REGEXP_EMAIL,
       },

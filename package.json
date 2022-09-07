@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "description": "messenger",
   "scripts": {
-    "clean": "rm -rf .parcel-cache && rm -rf dist",
-    "dev": "npm run clean && parcel ./src/pages/**/*.html && parcel watch ./src/pages/**/*",
-    "build": "parcel build ./src/pages/**/*.html",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development",
     "start": "npm run build && node ./index.js",
     "lint": "eslint ./src/**/*.ts --fix && npx stylelint ./src/**/*.scss --fix",
     "mocha": "./node_modules/.bin/mocha",
     "test": "npm run mocha",
-    "reinstall-modules": "rm -rf ./node_modules && rm -f package-lock.json && npm cache clean --force && npm i"
+    "clean": "rimraf dist && rimraf ./node_modules",
+    "reinstall-modules": "rimraf ./node_modules && rimraf package-lock.json && npm cache clean --force && npm i"
   },
   "repository": {
     "type": "git",
@@ -26,23 +26,23 @@
     "@babel/preset-env": "7.18.10",
     "@babel/preset-typescript": "7.18.6",
     "@babel/register": "7.18.9",
-    "@deeppines/parcel-resolver-root": "0.4.1",
-    "@parcel/config-default": "2.3.2",
-    "@parcel/packager-raw-url": "2.3.2",
-    "@parcel/transformer-pug": "2.3.2",
-    "@parcel/transformer-sass": "2.3.2",
-    "@parcel/transformer-webmanifest": "2.3.2",
     "@prettier/plugin-pug": "2.1.1",
     "@types/chai": "4.3.3",
     "@types/mocha": "9.1.1",
     "@typescript-eslint/eslint-plugin": "5.13.0",
     "@typescript-eslint/parser": "5.13.0",
     "chai": "4.3.6",
+    "clean-webpack-plugin": "4.0.0",
+    "cross-env": "7.0.3",
+    "css-loader": "6.7.1",
     "cssnano": "5.1.12",
     "eslint": "8.10.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-plugin-simple-import-sort": "7.0.0",
     "express": "4.17.3",
+    "file-loader": "6.2.0",
+    "html-webpack-plugin": "5.5.0",
+    "mini-css-extract-plugin": "2.6.1",
     "mocha": "10.0.0",
     "mocha-jsdom": "2.0.0",
     "nanoid": "3.3.1",
@@ -51,19 +51,21 @@
     "parcel-transformer-pug-precompile": "1.0.6",
     "postcss": "8.4.16",
     "prettier": "2.7.1",
+    "pug-loader": "2.4.0",
+    "rimraf": "3.0.2",
+    "sass": "1.54.8",
+    "sass-loader": "13.0.2",
+    "style-loader": "3.3.1",
     "stylelint": "14.5.3",
     "stylelint-config-standard-scss": "3.0.0",
     "stylelint-declaration-block-no-ignored-properties": "2.5.0",
     "stylelint-order": "5.0.0",
     "stylelint-scss": "4.3.0",
+    "ts-loader": "9.3.1",
     "tsconfig-paths": "4.1.0",
-    "typescript": "4.6.2"
-  },
-  "parcelResolverRoot": {
-    "@": "./src/"
-  },
-  "parcelCleanPaths": [
-    "dist",
-    ".parcel-cache"
-  ]
+    "typescript": "4.6.2",
+    "webpack": "5.74.0",
+    "webpack-cli": "4.10.0",
+    "webpack-dev-server": "4.10.1"
+  }
 }

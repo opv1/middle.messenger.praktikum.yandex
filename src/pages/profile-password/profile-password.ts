@@ -1,12 +1,12 @@
 import template from './profile-password.tpl.pug';
 
-import arrowIcon from '@assets/arrow-left.svg';
-import ProfileChangePassword from '@components/profile/profile-change-password/profile-change-password';
-import Icon from '@components/ui/icon/icon';
-import UserController from '@controllers/UserController';
-import { getDataObject } from '@helpers';
-import { IPasswordFormData } from '@types';
-import Block from '@utils/Block';
+import arrowIcon from 'src/assets/arrow-left.svg';
+import ProfileChangePassword from 'src/components/profile/profile-change-password/profile-change-password';
+import Icon from 'src/components/ui/icon/icon';
+import UserController from 'src/controllers/UserController';
+import { getDataObject } from 'src/helpers';
+import { IPasswordFormData } from 'src/types';
+import Block from 'src/utils/Block';
 
 class ProfilePasswordPage extends Block {
   protected initChildren() {

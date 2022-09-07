@@ -1,6 +1,6 @@
 import { setFormat } from './setFormatDate';
 
-import { IMessageItem } from '@types';
+import { IMessageItem } from 'src/types';
 
 export const getDateMessage = (msg: IMessageItem[] | IMessageItem) => {
   if (!Array.isArray(msg)) {

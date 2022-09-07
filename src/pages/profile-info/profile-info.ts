@@ -1,12 +1,12 @@
 import template from './profile-info.tpl.pug';
 
-import arrowIcon from '@assets/arrow-left.svg';
-import ProfileChangeInfo from '@components/profile/profile-change-info/profile-change-info';
-import Icon from '@components/ui/icon/icon';
-import UserController from '@controllers/UserController';
-import { getDataObject } from '@helpers';
-import { IUser } from '@types';
-import Block from '@utils/Block';
+import arrowIcon from 'src/assets/arrow-left.svg';
+import ProfileChangeInfo from 'src/components/profile/profile-change-info/profile-change-info';
+import Icon from 'src/components/ui/icon/icon';
+import UserController from 'src/controllers/UserController';
+import { getDataObject } from 'src/helpers';
+import { IUser } from 'src/types';
+import Block from 'src/utils/Block';
 
 class ProfileInfoPage extends Block {
   protected initChildren() {

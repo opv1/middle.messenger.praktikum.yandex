@@ -1,9 +1,9 @@
 import template from './profile.tpl.pug';
 
-import arrowIcon from '@assets/arrow-left.svg';
-import ProfileContainer from '@components/profile/profile-container/profile-container';
-import Icon from '@components/ui/icon/icon';
-import Block from '@utils/Block';
+import arrowIcon from 'src/assets/arrow-left.svg';
+import ProfileContainer from 'src/components/profile/profile-container/profile-container';
+import Icon from 'src/components/ui/icon/icon';
+import Block from 'src/utils/Block';
 
 class ProfilePage extends Block {
   protected initChildren() {

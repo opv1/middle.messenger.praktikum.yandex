@@ -1,6 +1,6 @@
 import template from './error-server.tpl.pug';
 
-import Block from '@utils/Block';
+import Block from 'src/utils/Block';
 
 class ErrorServerPage extends Block {
   render() {

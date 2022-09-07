@@ -1,7 +1,9 @@
 import { isDate } from './isDate';
 
 export const setFormat = (day: Date) => {
-  if (!isDate(day)) return '';
+  if (!isDate(day)) {
+    return '';
+  }
 
   const oneDay = 86400000;
   const week = oneDay * 7;
@@ -9,7 +11,6 @@ export const setFormat = (day: Date) => {
 
   const dateTimeFormat = (date: Date, options: Intl.DateTimeFormatOptions) => {
     const dtf = new Intl.DateTimeFormat('ru-RU', options);
-
     return dtf.format(date);
   };
 

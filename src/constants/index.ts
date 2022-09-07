@@ -1,12 +1,12 @@
-import ChatPage from '@pages/chat/chat';
-import ErrorClientPage from '@pages/error-client/error-client';
-import ErrorServerPage from '@pages/error-server/error-server';
-import ProfilePage from '@pages/profile/profile';
-import ProfileInfoPage from '@pages/profile-info/profile-info';
-import ProfilePasswordPage from '@pages/profile-password/profile-password';
-import SigninPage from '@pages/signin/signin';
-import SignupPage from '@pages/signup/signup';
-import { Endpoints, IPage } from '@types';
+import ChatPage from 'src/pages/chat/chat';
+import ErrorClientPage from 'src/pages/error-client/error-client';
+import ErrorServerPage from 'src/pages/error-server/error-server';
+import ProfilePage from 'src/pages/profile/profile';
+import ProfileInfoPage from 'src/pages/profile-info/profile-info';
+import ProfilePasswordPage from 'src/pages/profile-password/profile-password';
+import SigninPage from 'src/pages/signin/signin';
+import SignupPage from 'src/pages/signup/signup';
+import { Endpoints, IPage } from 'src/types';
 
 export const REGEXP_NAME = '^(?=.*[A-ZА-ЯЁ])([A-Za-zА-Яа-яЁё\\-]+)';
 

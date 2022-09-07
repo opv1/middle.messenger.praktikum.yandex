@@ -1,11 +1,11 @@
 import template from './auth-signin.tpl.pug';
 
-import FormField from '@components/auth/auth-field/auth-field';
-import Button from '@components/ui/button/button';
-import Link from '@components/ui/link/link';
-import { REGEXP_LOGIN, REGEXP_PASSWORD } from '@constants';
-import { EventsType } from '@types';
-import Block from '@utils/Block';
+import FormField from 'src/components/auth/auth-field/auth-field';
+import Button from 'src/components/ui/button/button';
+import Link from 'src/components/ui/link/link';
+import { REGEXP_LOGIN, REGEXP_PASSWORD } from 'src/constants';
+import { EventsType } from 'src/types';
+import Block from 'src/utils/Block';
 
 interface ISigninForm {
   method: string;

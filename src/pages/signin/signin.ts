@@ -1,10 +1,10 @@
 import template from './signin.tpl.pug';
 
-import SigninForm from '@components/auth/auth-signin/auth-signin';
-import AuthController from '@controllers/AuthController';
-import { getDataObject } from '@helpers';
-import { ISigninData } from '@types';
-import Block from '@utils/Block';
+import SigninForm from 'src/components/auth/auth-signin/auth-signin';
+import AuthController from 'src/controllers/AuthController';
+import { getDataObject } from 'src/helpers';
+import { ISigninData } from 'src/types';
+import Block from 'src/utils/Block';
 
 class SigninPage extends Block {
   protected initChildren() {

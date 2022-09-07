@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["./src/*"]
+    },
     "target": "es2017",
     "module": "commonjs",
     "typeRoots": [
@@ -15,11 +19,7 @@
     "strictNullChecks": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "skipLibCheck": true,
-    "baseUrl": ".",
-    "paths": {
-      "@*": ["./src/*"]
-    }
+    "skipLibCheck": true
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "dist", "index.js"]

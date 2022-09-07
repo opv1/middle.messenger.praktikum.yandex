@@ -1,7 +1,7 @@
 import { getKey } from './getKey';
 import { isArrayOrObject } from './isArrayOrObject';
 
-import { Indexed } from '@types';
+import { Indexed } from 'src/types';
 
 export const getParams = (data: Indexed | [], parentKey?: string) => {
   const result: [string, string][] = [];

@@ -1,4 +1,4 @@
-import Block from '@utils/Block';
+import Block from 'src/utils/Block';
 
 export enum Method {
   GET = 'GET',

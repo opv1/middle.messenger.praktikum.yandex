@@ -1,7 +1,7 @@
 import Route from './Route';
 
-import { APP_SELECTOR } from '@constants';
-import Block from '@utils/Block';
+import { APP_SELECTOR } from 'src/constants';
+import Block from 'src/utils/Block';
 
 export class Router {
   private static __instance: Router;

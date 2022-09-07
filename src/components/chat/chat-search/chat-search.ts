@@ -1,9 +1,9 @@
 import template from './chat-search.tpl.pug';
 
-import searchIcon from '@assets/icon-search.svg';
-import Icon from '@components/ui/icon/icon';
-import { EventsType } from '@types';
-import Block from '@utils/Block';
+import searchIcon from 'src/assets/icon-search.svg';
+import Icon from 'src/components/ui/icon/icon';
+import { EventsType } from 'src/types';
+import Block from 'src/utils/Block';
 
 interface ISearch {
   events?: EventsType;

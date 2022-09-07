@@ -1,5 +1,5 @@
-import Block from '@utils/Block';
-import renderDOM from '@utils/renderDOM';
+import Block from 'src/utils/Block';
+import renderDOM from 'src/utils/renderDOM';
 
 export default class Route {
   private pathname: string;

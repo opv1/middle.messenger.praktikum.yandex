@@ -1,10 +1,10 @@
 import UserController from './UserController';
 
-import ChatsAPI from '@api/ChatsAPI';
-import SocketConnection from '@api/SocketConnection';
-import { getDateChats } from '@helpers/getDateChats';
-import store from '@store';
-import { IChatCreate, IChatItem, IChatUsersRequest, IUser } from '@types';
+import ChatsAPI from 'src/api/ChatsAPI';
+import SocketConnection from 'src/api/SocketConnection';
+import { getDateChats } from 'src/helpers/getDateChats';
+import store from 'src/store';
+import { IChatCreate, IChatItem, IChatUsersRequest, IUser } from 'src/types';
 
 class ChatsController {
   private api: ChatsAPI;

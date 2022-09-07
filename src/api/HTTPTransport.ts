@@ -1,5 +1,5 @@
-import { isPlainObject } from '@helpers/isPlainObject';
-import { Method, OptionsType, OptionsWithoutMethod } from '@types';
+import { isPlainObject } from 'src/helpers/isPlainObject';
+import { Method, OptionsType, OptionsWithoutMethod } from 'src/types';
 
 class HTTPTransport {
   static API_URL = 'https://ya-praktikum.tech/api/v2';

@@ -1,11 +1,11 @@
 import template from './profile-container.tpl.pug';
 
-import Button from '@components/ui/button/button';
-import Link from '@components/ui/link/link';
-import AuthController from '@controllers/AuthController';
-import { withUser } from '@hoc/withUser';
-import { IProfileItem, IUser } from '@types';
-import Block from '@utils/Block';
+import Button from 'src/components/ui/button/button';
+import Link from 'src/components/ui/link/link';
+import AuthController from 'src/controllers/AuthController';
+import { withUser } from 'src/hoc/withUser';
+import { IProfileItem, IUser } from 'src/types';
+import Block from 'src/utils/Block';
 
 interface IProfile {
   data: IProfileItem[];

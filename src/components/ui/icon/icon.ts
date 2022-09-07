@@ -1,6 +1,6 @@
 import template from './icon.tpl.pug';
 
-import Block from '@utils/Block';
+import Block from 'src/utils/Block';
 
 interface IIcon {
   classes?: string;

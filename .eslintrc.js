@@ -24,22 +24,13 @@ module.exports = {
       'error',
       {
         groups: [
-          // common types
           ['^@/types'],
-          // Internal packages.
-          // api
           ['^@?\\/api'],
-          // utils
           ['^@?\\/utils'],
-          // UI
           ['^@?\\/ui\\/[^ce]', '^@?\\/ui\\/e', '^@?\\/ui\\/c'],
-          // Side effect imports.
           ['^\\u0000'],
-          // Parent imports. Put `..` last.
           ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
-          // Other relative imports. Put same-folder imports and `.` last.
           ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
-          // Style imports.
           ['^.+\\.s?css$'],
         ],
       },

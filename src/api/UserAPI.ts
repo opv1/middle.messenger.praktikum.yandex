@@ -1,6 +1,6 @@
 import BaseAPI from './BaseAPI';
 
-import { IPasswordData, IUser, IUserSearchRequest } from '@types';
+import { IPasswordData, IUser, IUserSearchRequest } from 'src/types';
 
 export default class UserAPI extends BaseAPI {
   constructor() {
