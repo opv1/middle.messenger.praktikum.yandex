@@ -1,3 +1,5 @@
+import { isEqual } from '../helpers/isEqual';
+
 import EventBus from './EventBus';
 
 import { nanoid } from 'nanoid';
@@ -72,9 +74,11 @@ class Block {
   }
 
   protected componentDidUpdate(oldProps: any, newProps: any) {
-    if (oldProps !== newProps) return true;
+    if (!isEqual(oldProps, newProps)) {
+      return true;
+    }
 
-    return;
+    return false;
   }
 
   public setProps = (nextProps: any) => {
@@ -83,6 +87,10 @@ class Block {
     }
 
     Object.assign(this.props, nextProps);
+  };
+
+  public getProps = () => {
+    return this.props;
   };
 
   get element(): HTMLElement | null {
@@ -161,7 +169,7 @@ class Block {
     const el = this.getContent();
 
     if (el) {
-      el.style.display = 'block';
+      el.style.display = 'flex';
     }
   }
 

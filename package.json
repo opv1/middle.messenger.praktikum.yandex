@@ -9,8 +9,7 @@
     "start": "npm run build && node ./index.js",
     "lint": "eslint ./src/**/*.ts --fix",
     "stylelint": "npx stylelint ./src/**/*.scss --fix",
-    "mocha": "./node_modules/.bin/mocha",
-    "test": "npm run mocha",
+    "test": "mocha --exit --recursive --timeout 10000",
     "clean": "rimraf dist && rimraf ./node_modules",
     "reinstall-modules": "rimraf ./node_modules && rimraf package-lock.json && npm cache clean --force && npm i",
     "prepare": "husky install"

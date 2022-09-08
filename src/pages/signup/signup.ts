@@ -9,7 +9,6 @@ import Block from 'src/utils/Block';
 class SignupPage extends Block {
   protected initChildren() {
     this.childrens.form = new SignupForm({
-      method: 'POST',
       events: {
         submit: (event) => this.submitHandler(event),
       },

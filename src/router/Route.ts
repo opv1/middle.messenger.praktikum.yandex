@@ -36,6 +36,8 @@ export default class Route {
       this.block = new this.blockClass();
     }
 
+    this.block.show();
+
     renderDOM(this.props.rootQuery, this.block);
   }
 }

@@ -1,10 +1,10 @@
 import template from './chat-head.tpl.pug';
 
-import arrowIcon from 'src/assets/arrow-right.svg';
 import ChatSearch from 'src/components/chat/chat-search/chat-search';
-import Icon from 'src/components/ui/icon/icon';
-import Link from 'src/components/ui/link/link';
+import Button from 'src/components/ui/button/button';
 import { getDataObject } from 'src/helpers';
+import router from 'src/router';
+import { Endpoints } from 'src/types';
 import Block from 'src/utils/Block';
 
 class ChatHead extends Block {
@@ -15,13 +15,14 @@ class ChatHead extends Block {
       },
     });
 
-    this.childrens.profileLink = new Link({
+    this.childrens.profileButton = new Button({
       classes: 'chat__link',
-      url: '/profile',
-      name: 'Профиль',
-      block: new Icon({
-        src: arrowIcon,
-      }),
+      type: 'button',
+      name: 'profile',
+      text: 'Профиль',
+      events: {
+        click: (event) => this.clickHandler(event),
+      },
     });
   }
 
@@ -32,6 +33,11 @@ class ChatHead extends Block {
     const formData = new FormData(form);
 
     console.log(getDataObject(formData));
+  }
+
+  clickHandler(event: Event) {
+    event.preventDefault();
+    router.go(Endpoints.PROFILE);
   }
 
   render() {

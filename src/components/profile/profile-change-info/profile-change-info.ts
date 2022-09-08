@@ -24,7 +24,7 @@ class ProfileChangeInfo extends Block {
       inputProps: {
         type: 'email',
         name: 'email',
-        placeholder: 'pochtasrc/yandex.ru',
+        placeholder: 'pochta@yandex.ru',
         required: true,
         pattern: REGEXP_EMAIL,
       },

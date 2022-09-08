@@ -1,10 +1,11 @@
 import template from './profile-password.tpl.pug';
 
-import arrowIcon from 'src/assets/arrow-left.svg';
 import ProfileChangePassword from 'src/components/profile/profile-change-password/profile-change-password';
-import Icon from 'src/components/ui/icon/icon';
+import Button from 'src/components/ui/button/button';
 import UserController from 'src/controllers/UserController';
 import { getDataObject } from 'src/helpers';
+import router from 'src/router';
+import { Endpoints } from 'src/types';
 import { IPasswordFormData } from 'src/types';
 import Block from 'src/utils/Block';
 
@@ -16,9 +17,20 @@ class ProfilePasswordPage extends Block {
       },
     });
 
-    this.childrens.icon = new Icon({
-      src: arrowIcon,
+    this.childrens.backButton = new Button({
+      classes: 'profile__back',
+      type: 'button',
+      name: 'back',
+      text: '<-',
+      events: {
+        click: (event) => this.clickHandlerBack(event),
+      },
     });
+  }
+
+  clickHandlerBack(event: Event) {
+    event.preventDefault();
+    router.go(Endpoints.PROFILE);
   }
 
   async submitHandler(event: Event) {
