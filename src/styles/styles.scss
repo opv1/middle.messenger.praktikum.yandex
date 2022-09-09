@@ -1,18 +1,18 @@
-@import './colors';
-@import './ui/button';
-@import './ui/input';
-@import './ui/link';
-@import './modules/auth';
-@import './modules/chat';
-@import './modules/error';
-@import './modules/profile';
+@import "./colors";
+@import "./ui/button";
+@import "./ui/input";
+@import "./ui/link";
+@import "./modules/auth";
+@import "./modules/chat";
+@import "./modules/error";
+@import "./modules/profile";
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Inter', 'Arial', 'Helvetica', sans-serif;
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
   background-color: $white;
 }
 
