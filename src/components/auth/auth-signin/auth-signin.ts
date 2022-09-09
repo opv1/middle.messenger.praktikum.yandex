@@ -2,6 +2,7 @@ import template from './auth-signin.tpl.pug';
 
 import FormField from 'src/components/auth/auth-field/auth-field';
 import Button from 'src/components/ui/button/button';
+import Link from 'src/components/ui/link/link';
 import { REGEXP_LOGIN, REGEXP_PASSWORD } from 'src/constants';
 import router from 'src/router';
 import { Endpoints } from 'src/types';
@@ -52,9 +53,8 @@ class SigninForm extends Block {
       text: 'Войти',
     });
 
-    this.childrens.signupButton = new Button({
-      type: 'button',
-      name: 'signup',
+    this.childrens.signupLink = new Link({
+      url: '/signup',
       text: 'Нет аккаунта?',
       events: {
         click: (event) => this.clickHandler(event),

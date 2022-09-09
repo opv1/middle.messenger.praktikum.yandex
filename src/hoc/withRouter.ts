@@ -1,4 +1,4 @@
-import router from 'src//router';
+import router from 'src/router';
 import Block from 'src/utils/Block';
 
 function withRouter(Component: typeof Block) {

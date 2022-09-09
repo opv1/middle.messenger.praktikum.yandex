@@ -1,7 +1,7 @@
 import template from './profile-password.tpl.pug';
 
 import ProfileChangePassword from 'src/components/profile/profile-change-password/profile-change-password';
-import Button from 'src/components/ui/button/button';
+import Link from 'src/components/ui/link/link';
 import UserController from 'src/controllers/UserController';
 import { getDataObject } from 'src/helpers';
 import router from 'src/router';
@@ -17,18 +17,17 @@ class ProfilePasswordPage extends Block {
       },
     });
 
-    this.childrens.backButton = new Button({
+    this.childrens.backLink = new Link({
       classes: 'profile__back',
-      type: 'button',
-      name: 'back',
+      url: '/profile',
       text: '<-',
       events: {
-        click: (event) => this.clickHandlerBack(event),
+        click: (event) => this.clickHandler(event),
       },
     });
   }
 
-  clickHandlerBack(event: Event) {
+  clickHandler(event: Event) {
     event.preventDefault();
     router.go(Endpoints.PROFILE);
   }

@@ -30,7 +30,11 @@ export const BASE_URL_SOCKET = 'wss://ya-praktikum.tech/ws/chats/';
 
 export const PAGES: IPage[] = [
   {
-    path: [Endpoints.INDEX, Endpoints.SIGNIN],
+    path: Endpoints.INDEX,
+    block: SigninPage,
+  },
+  {
+    path: Endpoints.SIGNIN,
     block: SigninPage,
   },
   {

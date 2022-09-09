@@ -96,7 +96,7 @@ export type Indexed<T = unknown> = {
 };
 
 export interface IPage {
-  path: Endpoints | Endpoints[];
+  path: Endpoints;
   block: typeof Block;
   props?: Record<string, unknown>;
 }

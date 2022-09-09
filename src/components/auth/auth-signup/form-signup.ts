@@ -2,6 +2,7 @@ import template from './form-signup.tpl.pug';
 
 import FormField from 'src/components/auth/auth-field/auth-field';
 import Button from 'src/components/ui/button/button';
+import Link from 'src/components/ui/link/link';
 import {
   REGEXP_EMAIL,
   REGEXP_LOGIN,
@@ -120,9 +121,8 @@ class SignupForm extends Block {
       text: 'Зарегистрироваться',
     });
 
-    this.childrens.signinButton = new Button({
-      type: 'button',
-      name: 'signin',
+    this.childrens.signinLink = new Link({
+      url: '/signin',
       text: 'Войти',
       events: {
         click: (event) => this.clickHandler(event),

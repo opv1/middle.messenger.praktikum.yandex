@@ -1,7 +1,7 @@
 import template from './chat-head.tpl.pug';
 
 import ChatSearch from 'src/components/chat/chat-search/chat-search';
-import Button from 'src/components/ui/button/button';
+import Link from 'src/components/ui/link/link';
 import { getDataObject } from 'src/helpers';
 import router from 'src/router';
 import { Endpoints } from 'src/types';
@@ -15,10 +15,9 @@ class ChatHead extends Block {
       },
     });
 
-    this.childrens.profileButton = new Button({
+    this.childrens.profileLink = new Link({
       classes: 'chat__link',
-      type: 'button',
-      name: 'profile',
+      url: '/profile',
       text: 'Профиль',
       events: {
         click: (event) => this.clickHandler(event),

@@ -8,3 +8,7 @@ app.use(express.static(`${__dirname}/dist`));
 app.listen(PORT, () => {
   console.log(`Server has been started on port ${PORT}...`);
 });
+
+app.get('/*', (req, res) => {
+  res.sendFile(`${__dirname}/dist/index.html`);
+});

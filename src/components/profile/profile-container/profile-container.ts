@@ -1,6 +1,7 @@
 import template from './profile-container.tpl.pug';
 
 import Button from 'src/components/ui/button/button';
+import Link from 'src/components/ui/link/link';
 import AuthController from 'src/controllers/AuthController';
 import { withUser } from 'src/hoc/withUser';
 import router from 'src/router';
@@ -49,18 +50,16 @@ class ProfileContainer extends Block {
   }
 
   protected initChildren() {
-    this.childrens.toInfoButton = new Button({
-      type: 'button',
-      name: 'toInfo',
+    this.childrens.infoLink = new Link({
+      url: '/info',
       text: 'Изменить данные',
       events: {
         click: (event) => this.clickHandlerInfo(event),
       },
     });
 
-    this.childrens.toPasswordButton = new Button({
-      type: 'button',
-      name: 'toPassword',
+    this.childrens.passwordLink = new Link({
+      url: '/password',
       text: 'Изменить пароль',
       events: {
         click: (event) => this.clickHandlerPassword(event),

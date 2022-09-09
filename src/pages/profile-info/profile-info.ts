@@ -1,7 +1,7 @@
 import template from './profile-info.tpl.pug';
 
 import ProfileChangeInfo from 'src/components/profile/profile-change-info/profile-change-info';
-import Button from 'src/components/ui/button/button';
+import Link from 'src/components/ui/link/link';
 import UserController from 'src/controllers/UserController';
 import { getDataObject } from 'src/helpers';
 import router from 'src/router';
@@ -17,18 +17,17 @@ class ProfileInfoPage extends Block {
       },
     });
 
-    this.childrens.backButton = new Button({
+    this.childrens.backLink = new Link({
       classes: 'profile__back',
-      type: 'button',
-      name: 'back',
+      url: '/profile',
       text: '<-',
       events: {
-        click: (event) => this.clickHandlerBack(event),
+        click: (event) => this.clickHandler(event),
       },
     });
   }
 
-  clickHandlerBack(event: Event) {
+  clickHandler(event: Event) {
     event.preventDefault();
     router.go(Endpoints.PROFILE);
   }
