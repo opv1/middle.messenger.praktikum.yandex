@@ -1,7 +1,7 @@
-import AuthAPI from '@api/AuthAPI';
-import router from '@router';
-import store from '@store';
-import { Endpoints, ISigninData, ISignUpFormData } from '@types';
+import AuthAPI from 'src/api/AuthAPI';
+import router from 'src/router';
+import store from 'src/store';
+import { Endpoints, ISigninData, ISignUpFormData } from 'src/types';
 
 class AuthController {
   private api: AuthAPI;

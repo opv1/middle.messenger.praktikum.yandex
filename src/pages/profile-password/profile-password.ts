@@ -1,12 +1,13 @@
 import template from './profile-password.tpl.pug';
 
-import arrowIcon from '@assets/arrow-left.svg';
-import ProfileChangePassword from '@components/profile/profile-change-password/profile-change-password';
-import Icon from '@components/ui/icon/icon';
-import UserController from '@controllers/UserController';
-import { getDataObject } from '@helpers';
-import { IPasswordFormData } from '@types';
-import Block from '@utils/Block';
+import ProfileChangePassword from 'src/components/profile/profile-change-password/profile-change-password';
+import Link from 'src/components/ui/link/link';
+import UserController from 'src/controllers/UserController';
+import { getDataObject } from 'src/helpers';
+import router from 'src/router';
+import { Endpoints } from 'src/types';
+import { IPasswordFormData } from 'src/types';
+import Block from 'src/utils/Block';
 
 class ProfilePasswordPage extends Block {
   protected initChildren() {
@@ -16,9 +17,19 @@ class ProfilePasswordPage extends Block {
       },
     });
 
-    this.childrens.icon = new Icon({
-      src: arrowIcon,
+    this.childrens.backLink = new Link({
+      classes: 'profile__back',
+      url: '/profile',
+      text: '<-',
+      events: {
+        click: (event) => this.clickHandler(event),
+      },
     });
+  }
+
+  clickHandler(event: Event) {
+    event.preventDefault();
+    router.go(Endpoints.PROFILE);
   }
 
   async submitHandler(event: Event) {

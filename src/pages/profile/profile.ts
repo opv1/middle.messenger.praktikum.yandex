@@ -1,17 +1,28 @@
 import template from './profile.tpl.pug';
 
-import arrowIcon from '@assets/arrow-left.svg';
-import ProfileContainer from '@components/profile/profile-container/profile-container';
-import Icon from '@components/ui/icon/icon';
-import Block from '@utils/Block';
+import ProfileContainer from 'src/components/profile/profile-container/profile-container';
+import Link from 'src/components/ui/link/link';
+import router from 'src/router';
+import { Endpoints } from 'src/types';
+import Block from 'src/utils/Block';
 
 class ProfilePage extends Block {
   protected initChildren() {
     this.childrens.profileContainer = new ProfileContainer({});
 
-    this.childrens.backIcon = new Icon({
-      src: arrowIcon,
+    this.childrens.backLink = new Link({
+      classes: 'profile__back',
+      url: '/chat',
+      text: '<-',
+      events: {
+        click: (event) => this.clickHandler(event),
+      },
     });
+  }
+
+  clickHandler(event: Event) {
+    event.preventDefault();
+    router.go(Endpoints.CHAT);
   }
 
   render() {

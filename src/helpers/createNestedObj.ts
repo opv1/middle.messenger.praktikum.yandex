@@ -1,4 +1,4 @@
-import { Indexed } from '@types';
+import { Indexed } from 'src/types';
 
 export const createNestedObj = (source: Indexed<any>, target = {}): Indexed<any> => {
   const result = Object.entries(source).reduce((obj: Indexed<any>, [k, v]) => {

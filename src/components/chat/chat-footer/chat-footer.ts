@@ -1,12 +1,12 @@
 import template from './chat-footer.tpl.pug';
 
-import attachmentIcon from '@assets/icon-attachment.svg';
-import ChatForm from '@components/chat/chat-form/chat-form';
-import Icon from '@components/ui/icon/icon';
-import ChatsController from '@controllers/ChatsController';
-import { getDataObject } from '@helpers';
-import { withActiveChat } from '@hoc/withActiveChat';
-import Block from '@utils/Block';
+import attachmentIcon from 'src/assets/icon-attachment.svg';
+import ChatForm from 'src/components/chat/chat-form/chat-form';
+import Icon from 'src/components/ui/icon/icon';
+import ChatsController from 'src/controllers/ChatsController';
+import { getDataObject } from 'src/helpers';
+import { withActiveChat } from 'src/hoc/withActiveChat';
+import Block from 'src/utils/Block';
 
 class ChatFooter extends Block {
   protected initChildren() {

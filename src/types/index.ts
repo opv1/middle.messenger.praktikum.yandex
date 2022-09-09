@@ -1,4 +1,4 @@
-import Block from '@utils/Block';
+import Block from 'src/utils/Block';
 
 export enum Method {
   GET = 'GET',
@@ -96,7 +96,7 @@ export type Indexed<T = unknown> = {
 };
 
 export interface IPage {
-  path: Endpoints | Endpoints[];
+  path: Endpoints;
   block: typeof Block;
   props?: Record<string, unknown>;
 }

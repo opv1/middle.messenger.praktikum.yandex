@@ -3,8 +3,7 @@ extends ../../layouts/profile/profile
 block mixins
 
 block sidebar
-  a.profile__back(href='/profile')
-    | !{ icon }
+  | !{ backLink }
 
 block content
   | !{ profileChangeInfo }

@@ -1,11 +1,11 @@
 import template from './chat-head.tpl.pug';
 
-import arrowIcon from '@assets/arrow-right.svg';
-import ChatSearch from '@components/chat/chat-search/chat-search';
-import Icon from '@components/ui/icon/icon';
-import Link from '@components/ui/link/link';
-import { getDataObject } from '@helpers';
-import Block from '@utils/Block';
+import ChatSearch from 'src/components/chat/chat-search/chat-search';
+import Link from 'src/components/ui/link/link';
+import { getDataObject } from 'src/helpers';
+import router from 'src/router';
+import { Endpoints } from 'src/types';
+import Block from 'src/utils/Block';
 
 class ChatHead extends Block {
   protected initChildren() {
@@ -18,10 +18,10 @@ class ChatHead extends Block {
     this.childrens.profileLink = new Link({
       classes: 'chat__link',
       url: '/profile',
-      name: 'Профиль',
-      block: new Icon({
-        src: arrowIcon,
-      }),
+      text: 'Профиль',
+      events: {
+        click: (event) => this.clickHandler(event),
+      },
     });
   }
 
@@ -32,6 +32,11 @@ class ChatHead extends Block {
     const formData = new FormData(form);
 
     console.log(getDataObject(formData));
+  }
+
+  clickHandler(event: Event) {
+    event.preventDefault();
+    router.go(Endpoints.PROFILE);
   }
 
   render() {

@@ -1,13 +1,13 @@
 import template from './chat.tpl.pug';
 
-import ChatFooter from '@components/chat/chat-footer/chat-footer';
-import ChatHead from '@components/chat/chat-head/chat-head';
-import ChatHeader from '@components/chat/chat-header/chat-header';
-import ChatList from '@components/chat/chat-list/chat-list';
-import ChatView from '@components/chat/chat-view/chat-view';
-import ChatsController from '@controllers/ChatsController';
-import store from '@store';
-import Block from '@utils/Block';
+import ChatFooter from 'src/components/chat/chat-footer/chat-footer';
+import ChatHead from 'src/components/chat/chat-head/chat-head';
+import ChatHeader from 'src/components/chat/chat-header/chat-header';
+import ChatList from 'src/components/chat/chat-list/chat-list';
+import ChatView from 'src/components/chat/chat-view/chat-view';
+import ChatsController from 'src/controllers/ChatsController';
+import store from 'src/store';
+import Block from 'src/utils/Block';
 
 class ChatPage extends Block {
   protected initChildren() {

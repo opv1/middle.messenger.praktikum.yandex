@@ -23,9 +23,9 @@ npm run dev
 npm run test
 ```
 
-## PR Sprint 3
+## PR Sprint 4
 
-https://github.com/opv1/middle.messenger.praktikum.yandex/pull/4
+https://github.com/opv1/middle.messenger.praktikum.yandex/pull/5
 
 ## Figma
 
@@ -34,3 +34,7 @@ https://www.figma.com/file/jF5fFFzgGOxQeB4CmKWTiE/
 ## Netlify
 
 https://dazzling-salmiakki-30009c.netlify.app/
+
+## Heroku
+
+https://messenger-opv1.herokuapp.com/

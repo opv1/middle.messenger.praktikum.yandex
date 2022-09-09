@@ -1,9 +1,9 @@
 import template from './chat-view.tpl.pug';
 
-import { withActiveChat } from '@hoc/withActiveChat';
-import { withUser } from '@hoc/withUser';
-import { IMessageItem } from '@types';
-import Block from '@utils/Block';
+import { withActiveChat } from 'src/hoc/withActiveChat';
+import { withUser } from 'src/hoc/withUser';
+import { IMessageItem } from 'src/types';
+import Block from 'src/utils/Block';
 
 interface IMessageView {
   data: IMessageItem[];

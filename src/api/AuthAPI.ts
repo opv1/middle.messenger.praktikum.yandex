@@ -1,6 +1,6 @@
 import BaseAPI from './BaseAPI';
 
-import { ISigninData, ISignupData } from '@types';
+import { ISigninData, ISignupData } from 'src/types';
 
 export default class AuthAPI extends BaseAPI {
   constructor() {

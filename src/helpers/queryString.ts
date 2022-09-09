@@ -1,7 +1,7 @@
 import { getParams } from './getParams';
 import { isPlainObject } from './isPlainObject';
 
-import { Indexed } from '@types';
+import { Indexed } from 'src/types';
 
 export const queryString = (data: Indexed) => {
   if (!isPlainObject(data)) {

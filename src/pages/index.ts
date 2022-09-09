@@ -1,6 +1,8 @@
-import { PAGES } from '@constants';
-import AuthController from '@controllers/AuthController';
-import router from '@router';
+import '../styles/styles.scss';
+
+import { PAGES } from 'src/constants';
+import AuthController from 'src/controllers/AuthController';
+import router from 'src/router';
 
 document.addEventListener('DOMContentLoaded', async () => {
   PAGES.forEach((page) => {

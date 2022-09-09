@@ -1,14 +1,21 @@
 import template from './form-signup.tpl.pug';
 
-import FormField from '@components/auth/auth-field/auth-field';
-import Button from '@components/ui/button/button';
-import Link from '@components/ui/link/link';
-import { REGEXP_EMAIL, REGEXP_LOGIN, REGEXP_NAME, REGEXP_PASSWORD, REGEXP_PHONE } from '@constants';
-import { EventsType } from '@types';
-import Block from '@utils/Block';
+import FormField from 'src/components/auth/auth-field/auth-field';
+import Button from 'src/components/ui/button/button';
+import Link from 'src/components/ui/link/link';
+import {
+  REGEXP_EMAIL,
+  REGEXP_LOGIN,
+  REGEXP_NAME,
+  REGEXP_PASSWORD,
+  REGEXP_PHONE,
+} from 'src/constants';
+import router from 'src/router';
+import { EventsType } from 'src/types';
+import { Endpoints } from 'src/types';
+import Block from 'src/utils/Block';
 
 interface ISignupForm {
-  method: string;
   events?: EventsType;
 }
 
@@ -115,9 +122,17 @@ class SignupForm extends Block {
     });
 
     this.childrens.signinLink = new Link({
-      url: '/',
-      name: 'Войти',
+      url: '/signin',
+      text: 'Войти',
+      events: {
+        click: (event) => this.clickHandler(event),
+      },
     });
+  }
+
+  clickHandler(event: Event) {
+    event.preventDefault();
+    router.go(Endpoints.SIGNIN);
   }
 
   render() {

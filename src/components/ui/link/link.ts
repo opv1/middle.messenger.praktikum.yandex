@@ -1,12 +1,14 @@
 import template from './link.tpl.pug';
 
-import Block from '@utils/Block';
+import { EventsType } from 'src/types';
+import Block from 'src/utils/Block';
 
 interface ILink {
   classes?: string;
   url: string;
-  name?: string;
+  text?: string;
   block?: Block;
+  events?: EventsType;
 }
 
 class Link extends Block {

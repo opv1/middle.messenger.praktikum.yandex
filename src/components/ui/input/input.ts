@@ -1,7 +1,7 @@
 import template from './input.tpl.pug';
 
-import { EventsType } from '@types';
-import Block from '@utils/Block';
+import { EventsType } from 'src/types';
+import Block from 'src/utils/Block';
 
 export interface IInput {
   id?: string;

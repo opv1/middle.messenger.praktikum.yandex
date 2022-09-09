@@ -1,7 +1,7 @@
 import Route from './Route';
 
-import { APP_SELECTOR } from '@constants';
-import Block from '@utils/Block';
+import { APP_SELECTOR } from 'src/constants';
+import Block from 'src/utils/Block';
 
 export class Router {
   private static __instance: Router;
@@ -22,16 +22,9 @@ export class Router {
     Router.__instance = this;
   }
 
-  public use(pathname: string | string[], block: typeof Block, props?: any) {
-    if (Array.isArray(pathname)) {
-      pathname.map((path) => {
-        const route = new Route(path, block, { ...props, rootQuery: APP_SELECTOR });
-        this.routes.push(route);
-      });
-    } else {
-      const route = new Route(pathname, block, { ...props, rootQuery: APP_SELECTOR });
-      this.routes.push(route);
-    }
+  public use(pathname: string, block: typeof Block, props?: any) {
+    const route = new Route(pathname, block, { ...props, rootQuery: APP_SELECTOR });
+    this.routes.push(route);
 
     return this;
   }

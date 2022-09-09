@@ -1,12 +1,12 @@
 import template from './chat-header.tpl.pug';
 
-import settingsIcon from '@assets/icon-settings.svg';
-import Button from '@components/ui/button/button';
-import Icon from '@components/ui/icon/icon';
-import Input from '@components/ui/input/input';
-import ChatsController from '@controllers/ChatsController';
-import { withActiveChat } from '@hoc/withActiveChat';
-import Block from '@utils/Block';
+import settingsIcon from 'src/assets/icon-settings.svg';
+import Button from 'src/components/ui/button/button';
+import Icon from 'src/components/ui/icon/icon';
+import Input from 'src/components/ui/input/input';
+import ChatsController from 'src/controllers/ChatsController';
+import { withActiveChat } from 'src/hoc/withActiveChat';
+import Block from 'src/utils/Block';
 
 class ChatHeader extends Block {
   protected initChildren() {

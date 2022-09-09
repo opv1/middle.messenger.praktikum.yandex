@@ -1,6 +1,6 @@
-import { isEqual } from '@helpers/isEqual';
-import store, { IState, StoreEvents } from '@store';
-import Block from '@utils/Block';
+import { isEqual } from 'src/helpers/isEqual';
+import store, { IState, StoreEvents } from 'src/store';
+import Block from 'src/utils/Block';
 
 const withStore =
   (mapStateToProps: (state: IState) => Record<string, unknown>) => (Component: typeof Block) => {

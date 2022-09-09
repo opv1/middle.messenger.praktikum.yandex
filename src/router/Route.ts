@@ -1,5 +1,5 @@
-import Block from '@utils/Block';
-import renderDOM from '@utils/renderDOM';
+import Block from 'src/utils/Block';
+import renderDOM from 'src/utils/renderDOM';
 
 export default class Route {
   private pathname: string;
@@ -35,6 +35,8 @@ export default class Route {
     if (!this.block) {
       this.block = new this.blockClass();
     }
+
+    this.block.show();
 
     renderDOM(this.props.rootQuery, this.block);
   }

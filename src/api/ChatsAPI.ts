@@ -1,7 +1,7 @@
 import BaseAPI from './BaseAPI';
 
-import { queryString } from '@helpers/queryString';
-import { IChatCreate, IChatUsersRequest, Indexed } from '@types';
+import { queryString } from 'src/helpers/queryString';
+import { IChatCreate, IChatUsersRequest, Indexed } from 'src/types';
 
 export default class ChatsAPI extends BaseAPI {
   constructor() {

@@ -1,6 +1,6 @@
 import template from './auth-field.tpl.pug';
 
-import Input, { IInput } from '@components/ui/input/input';
+import Input, { IInput } from 'src/components/ui/input/input';
 import {
   addClass,
   getValidationMessage,
@@ -8,9 +8,9 @@ import {
   isValid,
   removeClass,
   setMessage,
-} from '@helpers';
-import { EventsType } from '@types';
-import Block from '@utils/Block';
+} from 'src/helpers';
+import { EventsType } from 'src/types';
+import Block from 'src/utils/Block';
 
 interface IFormField {
   classes?: string;

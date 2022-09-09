@@ -1,8 +1,8 @@
 /* eslint-disable no-restricted-syntax */
-import { BASE_URL_SOCKET } from '@constants';
-import { getDateMessage } from '@helpers/getDateMessage';
-import { sortMessages } from '@helpers/sortMessages';
-import store from '@store';
+import { BASE_URL_SOCKET } from 'src/constants';
+import { getDateMessage } from 'src/helpers/getDateMessage';
+import { sortMessages } from 'src/helpers/sortMessages';
+import store from 'src/store';
 
 export default class SocketConnection {
   protected socket;

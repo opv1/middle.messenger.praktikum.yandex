@@ -1,11 +1,13 @@
 import template from './profile-container.tpl.pug';
 
-import Button from '@components/ui/button/button';
-import Link from '@components/ui/link/link';
-import AuthController from '@controllers/AuthController';
-import { withUser } from '@hoc/withUser';
-import { IProfileItem, IUser } from '@types';
-import Block from '@utils/Block';
+import Button from 'src/components/ui/button/button';
+import Link from 'src/components/ui/link/link';
+import AuthController from 'src/controllers/AuthController';
+import { withUser } from 'src/hoc/withUser';
+import router from 'src/router';
+import { Endpoints } from 'src/types';
+import { IProfileItem, IUser } from 'src/types';
+import Block from 'src/utils/Block';
 
 interface IProfile {
   data: IProfileItem[];
@@ -48,14 +50,20 @@ class ProfileContainer extends Block {
   }
 
   protected initChildren() {
-    this.childrens.changeInfoLink = new Link({
+    this.childrens.infoLink = new Link({
       url: '/info',
-      name: 'Изменить данные',
+      text: 'Изменить данные',
+      events: {
+        click: (event) => this.clickHandlerInfo(event),
+      },
     });
 
-    this.childrens.changePasswordLink = new Link({
+    this.childrens.passwordLink = new Link({
       url: '/password',
-      name: 'Изменить пароль',
+      text: 'Изменить пароль',
+      events: {
+        click: (event) => this.clickHandlerPassword(event),
+      },
     });
 
     this.childrens.logoutLink = new Button({
@@ -66,6 +74,16 @@ class ProfileContainer extends Block {
         click: (event) => this.clickHandler(event),
       },
     });
+  }
+
+  clickHandlerInfo(event: Event) {
+    event.preventDefault();
+    router.go(Endpoints.PROFILE_INFO);
+  }
+
+  clickHandlerPassword(event: Event) {
+    event.preventDefault();
+    router.go(Endpoints.PROFILE_PASSWORD);
   }
 
   async clickHandler(event: Event) {
