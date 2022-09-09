@@ -1,4 +1,5 @@
 import template from './link.tpl.pug';
+
 import { EventsType } from 'src/types';
 import Block from 'src/utils/Block';
 
