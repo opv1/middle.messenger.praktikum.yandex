@@ -23,10 +23,6 @@ npm run dev
 npm run test
 ```
 
-## PR Sprint 4
-
-https://github.com/opv1/middle.messenger.praktikum.yandex/pull/5
-
 ## Figma
 
 https://www.figma.com/file/jF5fFFzgGOxQeB4CmKWTiE/
